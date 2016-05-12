@@ -1,7 +1,12 @@
+
+body {
+   /* background-color: #f5f5f5;*/
+};
 .logo-principal{
   padding-top: 12px;
   max-width: 230px;
   max-width: 210px;
+  margin-left: 75px;
 }
 
 
@@ -60,4 +65,6 @@
 -ms-transform:scale(0.25);
 -o-transform:scale(0.25);
 transform:scale(0.25);
+
 }
+

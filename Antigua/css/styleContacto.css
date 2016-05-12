@@ -1,0 +1,32 @@
+#formulario{
+    display:inline-block;
+	padding-left: 300px;
+   width: 40%;
+padding-bottom: 30px;
+}
+#direccion{
+    display:inline-block;
+    max-width: 400px;
+    width: 30%;
+
+}
+
+.inpText, textarea{
+	border: 3px solid #ebebeb;
+	padding: 7px 20px;
+	font-size: 14px;
+    font-size: 0.875rem;
+    color: #242424;
+    font-family: "Lora",serif;
+    line-height: 1.7;
+    width: 300px;
+    margin-bottom: 20px;
+}
+#boton-enviar{
+background-color: #02C39A;
+    height: 40px;
+    width: 120px;
+    border: 0;
+    margin-left: 10px;
+    color: white;
+}
