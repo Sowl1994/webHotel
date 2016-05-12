@@ -1,0 +1,63 @@
+.logo-principal{
+  padding-top: 12px;
+  max-width: 230px;
+  max-width: 210px;
+}
+
+
+.filtro-slider{
+      -webkit-filter: grayscale(60%);
+}
+
+#reservarButton{
+  padding-top: 4px;
+  padding-left: 50px;
+}
+
+#reservaRow{
+  padding-left: 80px;
+}
+
+.c-align{
+  text-align: center;
+}
+
+#imagenH{
+    height: 250px;
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    padding-left: 5px;
+}
+
+.showHabs{
+      display: inline-flex;
+
+}
+#imagenH:hover{
+ -webkit-filter: grayscale(50%);
+
+}
+.imgPrincipal{
+  height: 500px;
+}
+
+
+.small-footer{
+  font-size: 14px;
+}
+
+
+.link-footer{
+  color: white;
+  font-size: 18px;
+  padding-left: 10px;
+  opacity: 0.9;
+}
+
+.zoom-out{
+  -webkit-transform:scale(0.25);
+-moz-transform:scale(0.25);
+-ms-transform:scale(0.25);
+-o-transform:scale(0.25);
+transform:scale(0.25);
+}
