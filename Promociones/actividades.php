@@ -10,7 +10,7 @@
 		<div class="col s12">
 			<div class="row">
 				<div class="col s6">
-				<img width='530' height="280" src="images/promociones/sierranevada.jpg">
+				<img class='img-promo' src="images/promociones/sierranevada.jpg">
 				</div>
 				<div class="col s6">
 					<div class='text-info-index-row'><h3>Visita a Sierra Nevada</h3>
@@ -37,14 +37,14 @@
 					<div style="clear:both;"></div>
 				</div>
 				<div class="col s6">
-					<img width='530' height="280" align="right" src="images/promociones/Alhambra2.jpg">
+					<img class='img-promo' align="right" src="images/promociones/Alhambra2.jpg">
 				</div>
 			</div>
 		</div>
 		<div class="col s12">
 			<div class="row">
 				<div class="col s6">
-				<img width='530' height="280" src="images/promociones/Flamenco.jpg">
+				<img class='img-promo' src="images/promociones/Flamenco.jpg">
 				</div>
 				<div class="col s6">
 					<div class='text-info-index-row'><h3>Espectáculo de flamenco</h3>

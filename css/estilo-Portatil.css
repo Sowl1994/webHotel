@@ -1,0 +1,39 @@
+@media screen and (min-device-width: 643px) and ( max-device-width: 1366px){
+  #main-container{
+  width:83%; 
+  display:inline-block;
+  }
+  .lateralmenu{
+    width: 17%;
+  }
+  .img-promo{
+    max-width: 370px;
+    max-height: 280px;
+  }
+
+.promo-text-info-index-row{
+  font-size: 14px;
+}
+
+.text-info-index-row{
+  padding: 10px;
+  margin-top: -20px;
+}
+.container{
+  width: 80%;
+}
+
+.polas{
+  width: 225px;
+}
+
+#fotos{
+  padding-left: 0px;
+}
+
+#mapa-contacto{
+  width:1050px;
+   height:400px;
+   margin-top: -30px;
+}
+} 

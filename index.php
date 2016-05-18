@@ -4,11 +4,11 @@ include("./includes/head.php");
 include("./includes/menu.php");
 if(!isset($_GET['secc'])){
 	include("./includes/Principal.php");
-	echo "<div style='width:85%;display:inline-block;'>";
+	echo "<div id='main-container'>";
 	include("./includes/body.php");
 	echo "</div>";
 }else{ 
-	echo "<div style='width:85%; display:inline-block;'>";
+	echo "<div id='main-container'>";
 	if($_GET['secc'] == "promo"){
 		include("./promociones/promociones.php");
 	}else if($_GET['secc'] == "actividades"){
