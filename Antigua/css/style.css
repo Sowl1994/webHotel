@@ -374,7 +374,7 @@ bottom: 0;
   width:180px;
   height:25px;
 }
-.menu-lateral .header .hd{float:left;}
+/*.menu-lateral .header .hd{float:left;}*/
 .menu-lateral .header .type{float:right;width:20px; color:#02C39A; font-size: 18px;}
 
 .padd{

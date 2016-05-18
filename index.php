@@ -11,6 +11,8 @@ if(!isset($_GET['secc'])){
 	echo "<div style='width:85%; display:inline-block;'>";
 	if($_GET['secc'] == "promo"){
 		include("./promociones/promociones.php");
+	}else if($_GET['secc'] == "actividades"){
+		include("./promociones/actividades.php");
 	}else if($_GET['secc'] == "habs"){
 		if(!isset($_GET['tipo'])){
 			include("./Habitaciones/habitaciones.php");
@@ -34,11 +36,12 @@ if(!isset($_GET['secc'])){
 	}
 	echo "</div>";
 }
-//	echo "<div class='lateralmenu' style='background-color: red;'>";
-//	include("./includes/barraLateral.php");
-	//echo "</div>";
+	echo "<div class='lateralmenu'>";
+	include("./includes/barraLateral.php");
+ echo "</div>";
 
-
+if(!isset($_GET['secc'])){
 include ("./includes/prefooter.php");
+};
 include("./includes/footer.php"); 
 ?>
