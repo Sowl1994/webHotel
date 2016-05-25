@@ -1,18 +1,18 @@
 <?php 
-include("./includes/head.php"); 
-
-include("./includes/menu.php");
+require_once("./includes/head.php"); 
+require_once("./includes/menu.php");
+require_once("./conexion/conexion.php");
 if(!isset($_GET['secc'])){
-	include("./includes/Principal.php");
-	echo "<div id='main-container'>";
-	include("./includes/body.php");
-	echo "</div>";
+	//include("./includes/Principal.php");
+	//echo "<div id='main-container'>";
+	require_once("./Hotel/hotel_controller.php");
+	//echo "</div>";
 }else{ 
 	echo "<div id='main-container'>";
 	if($_GET['secc'] == "promo"){
-		include("./promociones/promociones.php");
+		require_once("./promociones/promoActividades_controller.php");
 	}else if($_GET['secc'] == "actividades"){
-		include("./promociones/actividades.php");
+		require_once("./promociones/promoActividades_controller.php");
 	}else if($_GET['secc'] == "habs"){
 		if(!isset($_GET['tipo'])){
 			include("./Habitaciones/habitaciones.php");
@@ -26,7 +26,7 @@ if(!isset($_GET['secc'])){
 	}else if($_GET['secc'] == "servicios"){
 		include("./servicios/servicios.php");
 	}else if($_GET['secc'] == "fotos"){
-		include("./galeria/fotos.php");
+		require_once("./Galeria/galeria_controller.php");
 	}else if($_GET['secc'] == "contacto"){
 		include("./contacto/contacto.php");
 	}else if($_GET['secc'] == "opiniones"){

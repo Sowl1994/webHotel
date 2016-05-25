@@ -1,26 +1,19 @@
-	<div class="container">
-	<div class="row">
-  	   <div class="col s12 m12 l12 center">
-			<div id="info" style='margin-top: 20px;'>
-					<h3 style='padding-bottom: 20px;' class=' separador separadorDots'>Informacion de las promociones</h3>
-			</div>
-		</div> 
+<?php 
+	class Promocion {
 
-	<?php 
-		class Promocion {
+	   var $imagen;
+	   var $cabecera;
+	   var $descripcion;
+	   
+	  
+	   function Promocion($imagen,$cabecera,$descripcion) {
+	      $this->imagen = $imagen;
+	      $this->cabecera = $cabecera;
+	      $this->descripcion = $descripcion;
+	      $this->mbd=Conexion::conexionBD();
+	   }
 
-		   var $imagen;
-		   var $cabecera;
-		   var $descripcion;
-		   
-		  
-		   function Promocion($imagen,$cabecera,$descripcion) {
-		      $this->imagen = $imagen;
-		      $this->cabecera = $cabecera;
-		      $this->descripcion = $descripcion;
-		   }
-
-		   function printPromocionesLeft(){
+	  function printPromocionesLeft(){
 			   		echo '<div class="col s12 m12 l12 big">
 							<div class="row">
 						   		<div class="col s6 m6 l6">
@@ -57,7 +50,7 @@
 					</div>';
 		   }
 
-		   function printPromocionesRight(){
+	    function printPromocionesRight(){
 		   		echo '<div class="col s12 m12 l12 big">
 						<div class="row white">
 							<div class="col s6 l6">
@@ -94,38 +87,28 @@
 
 		   }
 
-		  function getImagen(){return $this->imagen;}
-		  function getCabecera(){return $this->cabecera;}
-		  function getDescripcion(){return $this->descripcion;}
+	  function getImagen(){return $this->imagen;}
+	  function getCabecera(){return $this->cabecera;}
+	  function getDescripcion(){return $this->descripcion;}
 
-		  function setImagen($img){$imagen = $img;}
-		  function setCabecera($header){$cabecera = $header;}
-		  function setDescripcion($desc){$descripcion = $desc;}
+	  function setImagen($img){$imagen = $img;}
+	  function setCabecera($header){$cabecera = $header;}
+	  function setDescripcion($desc){$descripcion = $desc;}
 
-		  function listaPromos(){
-			  	include './conexion/conexion.php';
-				$mbd = new PDO("mysql:host=" . $host . ";dbname=" . $dbname, $usuario, $pass,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-				$sentencia ="SELECT nombre,precio,plazas_disponibles,descripcion_esp,imagen from `promocion`";
-				$totalPromos=0;
+	  function listaPromos(){
+			$sentencia ="SELECT nombre,precio,plazas_disponibles,descripcion_esp,imagen from `promocion`";
+			$totalPromos=0;
 
-				foreach($mbd->query($sentencia) as $row){
-					$promo = new Promocion($row['imagen'],$row['nombre'],$row['descripcion_esp']);
-					if($totalPromos%2==0){
-						$promo->printPromocionesLeft();
-					}else{
-						$promo->printPromocionesRight();
-					}
-					$totalPromos++;
+			foreach($this->mbd->query($sentencia) as $row){
+				$promo = new Promocion($row['imagen'],$row['nombre'],$row['descripcion_esp']);
+				if($totalPromos%2==0){
+					$promo->printPromocionesLeft();
+				}else{
+					$promo->printPromocionesRight();
 				}
-		  }
+				$totalPromos++;
+			}
+	  }
 
-		}
-
-		$p = new Promocion('','','');
-		$p->listaPromos();
-		
-	?>
-		</div>
-	</div>
-    
-
+	}
+?>
