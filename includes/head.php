@@ -13,6 +13,9 @@
    <!-- Mi CSS  -->
   <link href="css/estilo.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/estilo-Portatil.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/estilo-movil.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/styleHabs.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <!-- jquery -->

@@ -1,6 +1,6 @@
 <?php
 	$usuario = "root";
-	$pass = "algo";
+	$pass = "";
 	$host = "localhost";
 	$dbname = "hotel";
 ?>

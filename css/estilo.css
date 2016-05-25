@@ -385,6 +385,7 @@ color:#FFF;
   text-align: center;
   width: 100%;
   bottom: 5px;
+  z-index: 1;
 
   font: 400 18px/1 'Kaushan Script', cursive;
   color: #black;
@@ -493,4 +494,18 @@ color:#FFF;
   padding-right: 24px;
   padding-top: 5px;
   padding-bottom: 10px;
+}
+
+
+.espacio{
+  padding-bottom: 400px;
+}
+
+.small{
+  display: none;
+}
+
+
+#googleMap{
+  padding-left: 40px;
 }

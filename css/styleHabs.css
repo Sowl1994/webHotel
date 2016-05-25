@@ -1,0 +1,13 @@
+.label-info-atrib{
+    font-size: 1em;
+}
+
+.n-attrib{
+    display: inline;
+    font-size: 0.9em;
+    color: black;
+}
+
+.amenities > li{
+    font-size: 0.9em;
+}
