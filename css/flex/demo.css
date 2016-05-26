@@ -1,0 +1,62 @@
+/* Demo CSS - You do not need this css in your own slider */
+
+
+
+#banner-fade,
+#banner-slide{
+	margin-bottom: 30px;
+	margin-left: 120px;
+}
+
+@media screen and (max-device-width: 643px){
+#banner-fade,
+#banner-slide{
+	margin-bottom: 30px;
+	margin-left: 0;
+}
+
+}
+
+
+/*
+ul.bjqs-controls.v-centered li a{
+	display:block;
+	padding:10px;
+	background:#fff;
+	color:#000;
+	text-decoration: none;
+}
+
+ul.bjqs-controls.v-centered li a:hover{
+	background:#000;
+	color:#fff;
+}
+
+*/
+ol.bjqs-markers li a{
+	padding:8px 8px;
+	background:#2bbbad;
+	color:#fff;
+	margin:5px;
+	border-radius: 50%;
+	text-decoration: none;
+	text-indent: -999em;
+	font-size: 0.01em; 
+}
+
+ol.bjqs-markers li{
+    position: relative;
+
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+ol.bjqs-markers li.active-marker a,
+ol.bjqs-markers li a:hover{
+	background: #607d8b !important;
+}
+
+p.bjqs-caption{
+	background: rgba(255,255,255,0.5);
+}

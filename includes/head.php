@@ -1,6 +1,6 @@
 <!--HEAD-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -15,13 +15,23 @@
   <link href="css/estilo-Portatil.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/estilo-movil.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/styleHabs.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+  <!--slider-->
+    <!-- bjqs.css contains the *essential* css needed for the slider to work -->
+    <link rel="stylesheet" href="css/flex/bjqs.css">
+    <!-- demo.css contains additional styles used to set up this demo page - not required for the slider --> 
+    <link rel="stylesheet" href="css/flex/demo.css">
+    <!-- load jQuery and the plugin -->
+    <script src="js/flex/bjqs-1.3.min.js"></script>
+  <!-- fin slider-->
 
+  <!--login-->
+    <link rel="stylesheet" href="css/login.css">
+  <!-- login-->
 
 </head>
 <!-- FIN HEAD-->

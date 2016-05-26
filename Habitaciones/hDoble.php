@@ -8,14 +8,30 @@
 	  		</div>
 
 	  	   <div class="col s12 l12 center ">
-			     <div id="info" style='margin-top: 20px;'>
-						<img id='imagenHDob' src="./images/habitacion_twin2.jpg">	
-				</div>
-	  		</div>
+				      <div id="banner-slide">
+				        <!-- start Basic Jquery Slider -->
+				        <ul class="bjqs">
+				          <li><img src="images/habitaciones/doble/d1.jpg"></li>
+				          <li><img src="images/habitaciones/doble/d2.jpg"></li>
+				          <li><img src="images/habitaciones/doble/d3.jpg"></li>
+				          <li><img src="images/habitaciones/doble/d4.jpg"></li>
+				          <li><img src="images/habitaciones/doble/d5.jpg"></li>
+				        </ul>
+				        <!-- end Basic jQuery Slider -->
+
+				      </div>
+				      <!-- End outer wrapper -->
+
+			</div>
 
 	 </div>
 
 	<div class="row">
+		<div class="input-field col s12 l12 center">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Reservar Ahora
+                  <i class="material-icons right">done</i>
+                </button>
+        </div>
 	</div>
 
 	<div class="row">
@@ -28,14 +44,14 @@
 				<br>
 				<label class='label-info-atrib'>Tamaño de la habitación</label> <p class='n-attrib'>  182cm</p>
 		      </div>
-		      <div class='info-hotel-descripcion'>
+		      <div class='info-hotel-descripcion' style='text-align:justify;'>
 		      	<p>Esta amplia habitación tiene un balcón privado con vistas a la Plaza Nueva, que ofrece a su vez vistas a la Alhambra.</p>
 		      </div>
 		    </div>
 		</div>
 		<div class="col s12 l6 ">
 			<div class="card-panel">
-		      <span class="text-darken-2 center">Servicios</span>
+		      <span class="text-darken-2 center" style=" color: #9e9e9e;">Servicios</span>
 				<ul class="amenities">
 					<li>Bidé</li>
 					<li>Toallas</li>
@@ -60,4 +76,35 @@
 		    </div>
 		</div>		
 	</div>
+	<div class="row">
+		<div class="input-field col s12 l12 right-align "  id='next-habs'>
+                <button class="btn waves-effect waves-light blue-grey" type="submit" name="action">Siguiente Habitacion
+                  <i class="material-icons right">trending_flat</i>
+                </button>
+        </div>
+	</div>
+
  </div>
+				    
+<script class="secret-source">
+	jQuery(document).ready(function($) {
+
+		$('#banner-slide').bjqs({
+			animtype      : 'slide',
+			height        : 550,
+			width         : 900,
+			responsive    : true,
+			animduration : 450, // how fast the animation are
+			animspeed : 4000, // the delay between each slide
+			automatic : true,
+			keyboardnav : true, // enable keyboard navigation
+			randomstart   : true
+		});
+	});
+
+	jQuery(function($) {
+		$('.secret-source').secretSource({
+			includeTag: false
+		});
+	});
+</script>
