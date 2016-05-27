@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 require_once("./includes/head.php"); 
 require_once("./includes/menu.php");
 require_once("./conexion/conexion.php");
@@ -14,7 +16,8 @@ if(!isset($_GET['secc'])){
 	}else if($_GET['secc'] == "actividades"){
 		require_once("./promociones/promoActividades_controller.php");
 	}else if($_GET['secc'] == "habs"){
-		if(!isset($_GET['tipo'])){
+		require_once("./Habitaciones/habitacion_controller.php");
+		/*if(!isset($_GET['tipo'])){
 			include("./Habitaciones/habitaciones.php");
 		}else if ($_GET['tipo'] == 1) {
 			include("./Habitaciones/hDoble.php");
@@ -22,7 +25,7 @@ if(!isset($_GET['secc'])){
 			include("./Habitaciones/hTriple.php");
 		}else if ($_GET['tipo'] == 3) {
 			include("./Habitaciones/hDSuperior.php");
-		}
+		}*/
 	}else if($_GET['secc'] == "servicios"){
 		include("./servicios/servicios.php");
 	}else if($_GET['secc'] == "fotos"){
