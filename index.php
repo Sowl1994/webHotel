@@ -10,7 +10,15 @@ if(!isset($_GET['secc'])){
 	require_once("./Hotel/hotel_controller.php");
 	//echo "</div>";
 }else{ 
-	echo "<div id='main-container'>";
+	
+
+	if(isset($_GET['secc']) && $_GET['secc'] == 'mireserva'){
+		echo "<div id='main-container' style='width: 100%;'>";
+	}else{
+		echo "<div id='main-container'>";
+	}
+
+
 	if($_GET['secc'] == "promo"){
 		require_once("./promociones/promoActividades_controller.php");
 	}else if($_GET['secc'] == "actividades"){
@@ -35,13 +43,20 @@ if(!isset($_GET['secc'])){
 	}else if($_GET['secc'] == "opiniones"){
 		include("./proximamente/template.php");
 	}else if($_GET['secc'] == "mireserva"){
-		include("./proximamente/paso2.php");
+		include("./proximamente/template.php");
 	}
 	echo "</div>";
 }
-	echo "<div class='lateralmenu'>";
-	include("./includes/barraLateral.php");
- echo "</div>";
+	if(isset($_GET['secc']) && $_GET['secc'] == 'mireserva'){
+		echo "<div class='lateralmenu' style='width: 0%;'>";
+		 echo "</div>";
+	}else{
+		echo "<div class='lateralmenu'>";
+		include("./includes/barraLateral.php");
+		 echo "</div>";
+	}
+
+
 
 if(!isset($_GET['secc'])){
 include ("./includes/prefooter.php");

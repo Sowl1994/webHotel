@@ -1,7 +1,7 @@
 
 <div class='content'>
 <div class='row'>
-<div class="col l7 offset-l3 card" style='margin-top: 50px;'>
+<div class="col l8 offset-l2 card" style='margin-top: 50px;'>
 	<br>
 		<div class='row'> <!-- progreso indicadores -->
 			<div class=' col l8 offset-l2  proces-row center row-icon-procg''>
@@ -12,7 +12,7 @@
 			</div>
 		</div><!-- fin progreso indicadores -->
 		<div class='row'><!-- calendario -->
-			<div class='input-field col l9 offset-l2'>
+			<div class='input-field col l10 offset-l1'>
 			<form>
               <div class="input-field col s12 l3">
                 <i class="material-icons prefix">today</i>

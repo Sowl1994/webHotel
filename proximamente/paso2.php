@@ -101,19 +101,19 @@
 	</div>
 	<div class="col s12 l3 card" id='big-res-carrito-second'>
 		<div class='row' style=' margin-bottom: 0px; padding-top: 5px;'>
-			<div class='col l5' ><p class='hab-cart'>Habitacion Doble</p></div>
-			<div class='col l2 offset-l1'><p class='hab-cart'>x 1  </p></div>
-			<div class='col l4 right' style='margin-right: -20px;' ><p class='hab-cart'>115.45 EUR</p></div>
+			<div class='col l6' ><p class='hab-cart'>Habitacion Doble</p></div>
+			<div class='col l2 '><p class='hab-cart'>x 1  </p></div>
+			<div class='col l4 right' style='margin-right: -10px;' ><p class='hab-cart'>115.45 EUR</p></div>
 		</div><hr class='separador-compra-cart'></hr>
 		<div class='row' style=' margin-bottom: 0px;'>
-			<div class='col l5' ><p class='hab-cart'>Habitacion Doble</p></div>
-			<div class='col l2 offset-l1'><p class='hab-cart'>x 1  </p></div>
-			<div class='col l4 right' style='margin-right: -20px;' ><p class='hab-cart'>115.45 EUR</p></div>
+			<div class='col l6' ><p class='hab-cart'>Habitacion Doble</p></div>
+			<div class='col l2 '><p class='hab-cart'>x 1  </p></div>
+			<div class='col l4 right' style='margin-right: -10px;' ><p class='hab-cart'>115.45 EUR</p></div>
 		</div><hr class='separador-compra-cart'></hr>
 		<div class='row' style=' margin-bottom: 10px; '>
 			<div class='col l3' style='margin-top:5px;' ><a style="color: #26a69a; font-size: 1.3em; margin-top:10px;">2/4 <i class="fa fa-users" aria-hidden="true"></i></a></div>
-			<div class='col l2 offset-l3' ><p class='hab-cart'>Total:</p></div>
-			<div class='col l4 right' style='margin-right: -20px;' ><p class='hab-cart'>600.45 EUR</p></div>	
+			<div class='col l2' ><p class='hab-cart'>Total:</p></div>
+			<div class='col l5 right' style='margin-right: -40px;' ><p class='hab-cart'>600.45 EUR</p></div>	
 		</div>
 	</div>
 	<div class="col s12 l3 card" id='big-res-carrito-second'>
