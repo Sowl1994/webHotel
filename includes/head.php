@@ -16,7 +16,7 @@
   <link href="css/estilo-movil.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/styleHabs.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="css/estilo-reserva.css">
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -31,7 +31,9 @@
 
   <!--login-->
     <link rel="stylesheet" href="css/login.css">
-  <!-- login-->
-
+  <!-- FIN login-->
+  <!--SLIDER DATE-->
+  
+  <!-- FIN SLIDER DATE-->
 </head>
 <!-- FIN HEAD-->

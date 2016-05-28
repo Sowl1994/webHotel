@@ -1,0 +1,83 @@
+.icon-proceso{
+	font-size: 1.667em;
+	color: rgba(1,22,39,0.5);
+}
+
+.labe-proceso{
+	font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 0.25em;
+    display: block;
+    color: rgba(1,22,39,0.5);
+}
+.row-icon-proc{
+   	text-align: center;
+    /* line-height: 3; */
+    flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 0px 2;
+    position: relative;
+    display: block;
+      color: rgba(1,22,39,0.5);
+}
+.row-icon-procg > *:not(:first-child)::before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: -50%;
+    right: 50%;
+    top: 0.5em;
+    border-top: 0.2em solid;
+    margin: 0 2.1em;
+
+}
+
+
+.proces-row{
+	margin: 1.816em 0.1em 1.816em 0.1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.select-proc > *{
+	    color: #009688 !important;
+}
+
+.rotado{
+	    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.card-proc{
+	padding:7px;
+}
+.card-proc-text{
+	font-size: 1.3em;
+	font-weight: 300;
+}
+
+.card-proc-action{
+	position: relative;
+    background-color: inherit;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 7px;
+    z-index: 2;
+}
+
+.card-proc-add{
+	padding-right: 20px;
+	padding-top: 3px;
+	color: #ffab40;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}
+
+.bt-movil{
+	margin-bottom: 5px;
+}
