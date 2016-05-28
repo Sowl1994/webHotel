@@ -4,7 +4,7 @@
 <div class="col s12 l7 offset-l3 card" style='margin-top: 50px;'>
 	<br>
 		<div class='row'> <!-- progreso indicadores -->
-			<div class=' col s12 l8 offset-l2  proces-row center row-icon-procg''>
+			<div class=' col s12 l8 offset-l2  proces-row center row-icon-procg'>
 				<a href="#" class='row-icon-proc '><i class='fa fa-check-circle-o icon-proceso'></i><div class='labe-proceso'>Fechas</div></a>
 				<a href="#" class='row-icon-proc'><i class="fa fa-bed icon-proceso" aria-hidden="true"></i></i><div class='labe-proceso'>Habitaciones</div></a>
 				<a href="#" class='row-icon-proc select-proc'><i class="fa fa-users icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Datos Cliente</div></a>

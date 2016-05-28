@@ -32,8 +32,8 @@
   <!--login-->
     <link rel="stylesheet" href="css/login.css">
   <!-- FIN login-->
-  <!--SLIDER DATE-->
-  
-  <!-- FIN SLIDER DATE-->
+  <!-- alerts-->
+   <link rel="stylesheet" href="css/alerts.css">
+  <!-- FIN alerts-->
 </head>
 <!-- FIN HEAD-->
