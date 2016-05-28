@@ -6,73 +6,140 @@
 		<div class='row'> <!-- progreso indicadores -->
 			<div class=' col s12 l8 offset-l2  proces-row center row-icon-procg''>
 				<a href="#" class='row-icon-proc '><i class='fa fa-check-circle-o icon-proceso'></i><div class='labe-proceso'>Fechas</div></a>
-				<a href="#" class='row-icon-proc select-proc'><i class="fa fa-bed icon-proceso" aria-hidden="true"></i></i><div class='labe-proceso'>Habitaciones</div></a>
-				<a href="#" class='row-icon-proc'><i class="fa fa-users icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Datos Cliente</div></a>
+				<a href="#" class='row-icon-proc'><i class="fa fa-bed icon-proceso" aria-hidden="true"></i></i><div class='labe-proceso'>Habitaciones</div></a>
+				<a href="#" class='row-icon-proc select-proc'><i class="fa fa-users icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Datos Cliente</div></a>
 				<a href="#" class='row-icon-proc'><i class="fa fa-credit-card-alt icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Pago</div></a>
 			</div>
 		</div><!-- fin progreso indicadores -->
-		<div class='row'><!-- habitaciones -->
-			<div class='col l12'>
-				<div class='col l4'>
-					<div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="images/habitaciones/doble/d1.jpg">
+		<form id='informacion-usuario' method="post">
+			<div class='row'><!-- datos usuario -->
+				    <div class="col s12 l10 offset-l1">
+						<div class="row">
+						<h4 class='big-texth4-cart'> Información Personal </h4>
+							<div class="input-field col s12 l4">
+								<input id="Nombre" type="text" class="validate">
+								<label for="Nombre">Nombre</label>
+							</div>
+							<div class="input-field col s12 l4">
+								<input id="apellidos" type="text" class="validate">
+								<label for="apellidos">Apellidos</label>
+							</div>
+							<div class="input-field col s12 l4">
+								<input id="apellidos" type="text" class="validate">
+								<label for="apellidos">DNI</label>
+							</div>
 						</div>
-						<div class="card-proc ">
-							<span class="activator grey-text text-darken-4 card-proc-text">Habitacion Doble<i class="material-icons right dots-card">more_vert</i></span>
+						<div class="row">
+							<div class="input-field col s6 l3">
+								<input id="password" type="password" class="validate">
+								<label for="password">Password</label>
+							</div>
+							<div class="input-field col s6 l3">
+								<input id="email" type="password" class="validate">
+								<label for="email">Repite password</label>
+							</div>
+							<div class="input-field col s6 l3">
+								<input id="email" type="email" class="validate">
+								<label for="email">Email</label>
+							</div>
+							<div class="input-field col s6 l3">
+								<input id="email" type="email" class="validate">
+								<label for="email">Repite Email</label>
+							</div>
 						</div>
-						<div class="card-proc-action">
-							<a style="color: #26a69a; font-size: 1.4em; margin-left:10px;">3 <i class="fa fa-users" aria-hidden="true"></i></a>
-							<a href="#" class=" right card-proc-add" style="font-size:1.1em;">Añadir</a>
+				    </div>  
+			</div><!-- fin datos usuario -->
+
+			<!--<div class='row'> --><!-- datos personas -->
+				   <!--
+				    <form class="col s12 l10 offset-l1">
+						<div class="row">
+						<h4 class='big-texth4-cart'> Información Hospedados  </h4>
+						<div class="input-field col s4 l2">
+							<label class='client-label-proc' for="Nombre">Cliente 1:</label>
 						</div>
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Habitacion Doble<i class="material-icons right">close</i></span>
-							<p>jkljlk</p>
+							<div class="input-field col s4">
+								<input id="Nombre" type="text" class="validate">
+								<label for="Nombre">Nombre</label>
+							</div>
+							<div class="input-field col s4">
+								<input id="apellidos" type="text" class="validate">
+								<label for="apellidos">Apellidos</label>
+							</div>
+							<div class="input-field col s2">
+								<input id="apellidos" type="text" class="validate">
+								<label for="apellidos">DNI</label>
+							</div>
 						</div>
-					</div>
-				</div>
-				<div class='col l4'>
-					<div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="images/habitaciones/doble/d3.jpg">
+						<div class="input-field col s4 l2">
+							<label class='client-label-proc' for="Nombre">Cliente 2:</label>
 						</div>
-						<div class="card-proc ">
-							<span class="activator grey-text text-darken-4 card-proc-text">Habitacion Doble Superior<i class="material-icons right dots-card">more_vert</i></span>
+							<div class="input-field col s4">
+								<input id="Nombre" type="text" class="validate">
+								<label for="Nombre">Nombre</label>
+							</div>
+							<div class="input-field col s4">
+								<input id="apellidos" type="text" class="validate">
+								<label for="apellidos">Apellidos</label>
+							</div>
+							<div class="input-field col s2">
+								<input id="apellidos" type="text" class="validate">
+								<label for="apellidos">DNI</label>
+							</div>
+				    </form> 
+				    --> 
+
+			<!--</div>--><!-- fin datos peronas -->
+			<div class='row'><!-- datos pago -->
+				    <div class="col s12 l10 offset-l1">
+						<div class="row">
+						<h4 class='big-texth4-cart'> Información Pago</h4>
+							<div class="input-field col s12 l3">
+								<input id="Nombre" type="text" class="validate">
+								<label for="Nombre">Numero de Tarjeta</label>
+							</div>
+							<div class="input-field col s6 l2">
+								<input id="apellidos" type="text" class="validate">
+								<label for="apellidos">Cod. seguridad</label>
+							</div>
+							<div class="input-field col s6 l3">
+								<input id="apellidos" type="text" class="validate">
+								<label for="apellidos">Nombre titular</label>
+							</div>
+							<div class="input-field col s4 l2">
+								<label class='client-label-proc' for="Nombre">Expiracion:</label>
+							</div>
+							<div class="input-field col s4 l1">
+								<input id="apellidos" type="number" min='0' max='12' class="validate center">
+							</div>
+							<div class="input-field col s4 l1">
+								<input id="apellidos" type="number" min='0' max='99' class="validate center">
+							</div>
 						</div>
-						<div class="card-proc-action">
-							<a style="color: #26a69a; font-size: 1.4em; margin-left:10px;">2 <i class="fa fa-users" aria-hidden="true"></i></a>
-							<a href="#" class=" right card-proc-add" style="font-size:1.1em;">Añadir</a>
+						<p>
+							<input class="with-gap" name="group3" type="radio" id="test5"  />
+							<label for="test5">Voy a pagar en metalico</label>
+						</p>
+				    </div>
+			</div><!-- fin datos pago -->
+
+				<div class='row'><!-- datos adicionales -->
+				    <div class="col s12 l10 offset-l1">
+						<div class="row">
+						<h4 class='big-texth4-cart'> Información adicional</h4>
+							<div class="input-field col s12">
+								<textarea id="textarea1" class="materialize-textarea"></textarea>
+	         					<label for="textarea1">Si tiene alguna necesidad, o comentario, deje información aqui</label>
+							</div>
 						</div>
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Habitacion Doble Superior<i class="material-icons right">close</i></span>
-							<p>jkljlk</p>
-						</div>
-					</div>
-				</div>
-				<div class='col l4'>
-					<div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="images/habitaciones/doble/d2.jpg">
-						</div>
-						<div class="card-proc ">
-							<span class="activator grey-text text-darken-4 card-proc-text">Habitacion Triple<i class="material-icons right dots-card">more_vert</i></span>
-						</div>
-						<div class="card-proc-action">
-							<a style="color: #26a69a; font-size: 1.4em; margin-left:10px;">4 <i class="fa fa-users" aria-hidden="true"></i></a>
-							<a href="#" class=" right card-proc-add" style="font-size:1.1em;">Añadir</a>
-						</div>
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Habitacion Triple<i class="material-icons right">close</i></span>
-							<p>jkljlk</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!-- fin habitaciones -->
+
+				    </div>
+			</div><!-- fin datos adicionales -->
+		</form>
 		<div class='row'><!-- botones continuar -->
 			<div class="input-field col s12 l12  right-align " id="next-habs">
 				<div class='col s12 l2  bt-movil'>
-						<button class="btn col s12 waves-effect waves-light red left" type="submit" name="action">Cancelar </button>
+						<button class="btn col s12 waves-effect waves-light red left" type="submit" name="action">Cancelar</button>
 				</div>
 				<div class='col s12 l3 offset-l4 bt-derecha  bt-movil'>
 						<button class="btn col s12 waves-effect waves-light blue-grey" type="submit" name="action">Anterior 

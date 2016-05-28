@@ -14,12 +14,12 @@
 		<div class='row'><!-- calendario -->
 			<div class='input-field col l9 offset-l2'>
 			<form>
-              <div class="input-field col s12 l4">
+              <div class="input-field col s12 l3">
                 <i class="material-icons prefix">today</i>
                 <input id="FechaEntrada" type="date" class="datepicker c-align">
                 <label for="FechaEntrada">Fecha entrada</label>
               </div>
-              <div class="input-field col s12 l4">
+              <div class="input-field col s12 l3">
                 <i class="material-icons prefix">today</i>
                 <input id="FechaSalida" type="date" class="datepicker c-align">
                 <label for="FechaSalida">Fecha salida</label>
@@ -28,6 +28,11 @@
                 <i class="material-icons prefix">supervisor_account</i>
                 <input id="npersonas" type="number" class="c-align">
                 <label for="npersonas">Nº Personas</label>
+              </div>
+              <div class="input-field col s12 l3">
+                <i class="material-icons prefix">supervisor_account</i>
+                <input id="nninios" type="number" class="c-align">
+                <label for="nninios">Nº niños</label>
               </div>
           </form>
 

@@ -35,7 +35,7 @@ if(!isset($_GET['secc'])){
 	}else if($_GET['secc'] == "opiniones"){
 		include("./proximamente/template.php");
 	}else if($_GET['secc'] == "mireserva"){
-		include("./proximamente/template.php");
+		include("./proximamente/paso2.php");
 	}
 	echo "</div>";
 }
