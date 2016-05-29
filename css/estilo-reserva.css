@@ -58,8 +58,8 @@
 	padding:7px;
 }
 .card-proc-text{
-	font-size: 1.3em;
-	font-weight: 300;
+	font-size: 1.2em;
+	font-weight: 350;
 }
 
 .card-proc-action{
@@ -177,6 +177,13 @@ hr.separador-cart:after {
     #big-res-carrito-second{
        margin-top: 0px; 
        margin-left: 0px;
+    }
+
+
+    .date-cart{
+    font-size: 1em;
+        font-weight: 300;
+        line-height: 0rem;
     }
 
 }

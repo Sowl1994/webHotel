@@ -138,4 +138,7 @@ a:hover .left-arrow:after, a:hover .top:after, a:hover .bottom:after, a:hover .r
  	padding-top: 50px;
  }
  
+ #prev-habs{
+  text-align: center;
+ }
 }

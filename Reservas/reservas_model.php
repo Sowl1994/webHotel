@@ -177,7 +177,7 @@
 	                <img class='activator' src='".$row['imagen']."'>
 	              </div>
 	              <div class='card-proc '>
-	                <span class='activator grey-text text-darken-4 card-proc-text'>".$row['nombre']."<i class='material-icons right dots-card'>more_vert</i></span>
+	                <span class='activator grey-text text-darken-4 card-proc-text'>".$row['nombre']."<i class='material-icons right dots-card-reserva'>more_vert</i></span>
 	              </div>
 	              <div class='card-proc-action'>
 	                <a style='color: #26a69a; font-size: 1.4em; margin-left:10px;'>".$row['pax']." <i class='fa fa-users' aria-hidden='true'></i></a>

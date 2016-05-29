@@ -47,7 +47,7 @@
 								<?php }?>
 								<label for="dni">DNI</label>
 							</div>
-							<div class="input-field col s6 l6">
+							<div class="input-field col s12 l6">
 							<?php 
 								if(isset($_SESSION['email']))
 									echo '<input id="email" name="email" type="email" value="'.$_SESSION['email'].'" class="validate">';
@@ -160,7 +160,7 @@
 					            <p class='date-cart'><?php 
 								  setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
 					              $fecha = strftime("%A, %d de %B de %Y", strtotime($fechaIn));
-					              echo $fecha . "(Estancia de ".$dias." dias)";
+					              echo $fecha;
 					             ?><br></p>
 					            <p class='small-text-cart'> A partir de las 13:00</p>
 					            <hr class='separador-cart'></hr>

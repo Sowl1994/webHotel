@@ -69,7 +69,7 @@
       <div class='row' style=' margin-bottom: 10px;'>
         <div class='col l3' style='margin-top:5px;' ><a style="color: #26a69a; font-size: 1.3em; margin-top:10px;"><span id="totalPersonas"><?php echo $_SESSION['nPersonas']?></span> <i class="fa fa-users" aria-hidden="true"></i></a></div>
         <div class='col l2' ><p class='hab-cart'>Total:</p></div>
-        <div class='col l5 right' style='margin-right: -40px;' ><p id="total" class='hab-cart'>0€/noche</p></div>  
+        <div class='col l5 right' ><p id="total" class='hab-cart'>0€/noche</p></div>  
       </div>
     </div>
     <div class="col s12 l3 card" id='big-res-carrito-second'>
@@ -99,12 +99,12 @@
 
         if(pedido.indexOf(id) == -1){
           var nombreHabitacion = document.createElement("div");
-          nombreHabitacion.className="col l7";
+          nombreHabitacion.className="col  l7";
           var parrafoNombre = document.createElement("p");
           parrafoNombre.innerHTML=nombre;
 
           var totalHabitacion = document.createElement("div");
-          totalHabitacion.className="col l2";
+          totalHabitacion.className="col  l2";
           var parrafoTotal = document.createElement("p");
           parrafoTotal.id="t"+id;
           parrafoTotal.innerHTML="x "+ 1;

@@ -36,12 +36,18 @@
         </ul>
         <!-- NAV MOBIL-->
           <ul id="nav-mobile" class="side-nav">
-
+          <?php if(isset($_SESSION['session_username'])){?>
+                 <li><a  class="dropdown-button" href="#!" data-activates="loginDesplegable-movil"><i class="material-icons right">perm_identity</i>Bienvenido, <?php echo $_SESSION['session_username'];?></a></li>
+                <ul id="loginDesplegable-movil" class="dropdown-content">
+                <li><a class="center" href="./Usuarios/usuario_controller.php?lo">Logout</a></li>
+              </ul>
+          <?php }else{?>
           <li><a  class="dropdown-button" href="#!" data-activates="loginDesplegable-movil"><i class="material-icons right">supervisor_account</i>Acceder</a></li>
           <ul id="loginDesplegable-movil" class="dropdown-content">
                 <li><a class="modal-trigger center" href="#modal-login">Acceder</a></li>
                 <li><a class="modal-trigger center" href="#modal-registro">Registro</a></li>
               </ul>
+          <?php }?>   
               <li><a href="index.php">Hotel</a></li>
               <li><a href="index.php?secc=promo">Promociones</a></li>
               <li><a href="index.php?secc=actividades">Actividades</a></li>
