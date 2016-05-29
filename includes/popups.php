@@ -1,29 +1,59 @@
 
-<div class="alert-container error">
-  <i class="icon-e fa fa-times" aria-hidden="true"></i>
-  <p class="alert-message">PC master race</p>
-  <div class="extra">cerrar</div>
-</div>
+<?php
 
-<div class="alert-container sucess">
-  <i class="icon-s fa fa-check" aria-hidden="true"></i>
-  <p class="alert-message">PC master race</p>
-</div>
+  function alertwarning($mensaje){
+    echo "
+    <div class='alert-container warning'>
+      <i class='icon-w fa fa-exclamation-triangle' aria-hidden='true'></i>
+      <p class='alert-message'>" . $mensaje . "</p>
+    </div>";
+    echo "
+        <script type='text/javascript'>
+          $('.warning').addClass('active');
+          setTimeout(function(){
+            $('.warning').removeClass('active');
+          }, 3000);
+        </script>";
+  }
 
-<div class="alert-container warning">
-  <i class="icon-w fa fa-exclamation-triangle" aria-hidden="true"></i>
-  <p class="alert-message">PC master race</p>
-</div>
+  function alertsucess($mensaje){
+    echo "
+    <div class='alert-container sucess'>
+      <i class='icon-s fa fa-check' aria-hidden='true'></i>
+      <p class='alert-message'>" . $mensaje . "</p>
+    </div>";
+    echo "
+        <script type='text/javascript'>
+          $('.sucess').addClass('active');
+          setTimeout(function(){
+            $('.sucess').removeClass('active');
+          }, 3000);
+        </script>";
+  }
 
-<!--<button>PC o consola?</button>-->
-<!--
-<script type="text/javascript">
-$('button').click(function(){
-  $('.error').addClass('active');
-  
-  setTimeout(function(){
-    $('.error').removeClass('active');
-  }, 3000);
+
+  function alertError($mensaje){
+    echo "
+    <div class='alert-container error'>
+      <i class='icon-e fa fa-times' aria-hidden='true'></i>
+      <p class='alert-message'>" . $mensaje . "</p>
+      <div class='extra'><a id='calert-e'>cerrar</a></div>
+    </div>";
+    echo "
+        <script type='text/javascript'>
+          $('.error').addClass('active');
+          setTimeout(function(){
+            $('.error').removeClass('active');
+          }, 90000);
+        </script>";
+  }
+
+
+
+?>
+
+<script type='text/javascript'>
+$('#calert-e').click(function(){
+  $('.error').removeClass('active');
 });
 </script>
--->
