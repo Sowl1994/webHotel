@@ -32,9 +32,10 @@
 			$row = $sentencia->fetch();
 
 			if(empty($row['login']) || empty($row['id'])){
-				header("Location:index.php?datosErroneos");
+				$aD = "Location:../index.php?datosErroneos";
 			}else{
 				session_start();
+				var_dump("a".$row['id']);
 				$_SESSION['session_username']= $row['login'];
 				$_SESSION['nombre'] = $row['nombre'];
 				$_SESSION['apellidos'] = $row['apellidos'];
@@ -43,8 +44,10 @@
 				$_SESSION['session_id']= $row['id'];
 				$_SESSION['session_pass']= $row['pass'];
 				$_SESSION['isAdmin']= $row['is_admin'];
+
+				$aD ="Location: ../index.php";
 			}
-			
+			return $aD;
 		}
 
 		public function logout(){

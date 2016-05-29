@@ -16,7 +16,7 @@
 						<div class="row">
 						<h4 class='big-texth4-cart'> Información Personal </h4>
 							<div class="input-field col s12 l4">
-							<?php 
+							<?php
 							if(isset($_SESSION['nombre']))
 								echo '<input id="Nombre" name="nombre" type="text" value="'.$_SESSION['nombre'].'" class="validate">';
 								else{
@@ -171,13 +171,27 @@
 									}else{
 										echo "<p class='date-cart'> Duración estancia: ".$dias." dias<br></p>";
 										echo "<p class='date-cart'> Personas: ".$_SESSION['nPersonas']."<br></p>";
-										echo "<p class='date-cart'> Pedido: <br></p>";
-										$reserva->listaPedido($_POST['totalHabs']);
-										echo "<h2>";
 
+										echo "<p class='date-cart'> Promociones: <br></p>";
+
+										$actividades = array();
+										for ($i=0; $i < 4; $i++) { 
+											$act = "act".$i;
+											if(isset($_POST[$act]) && $_POST[$act] == "on"){
+												array_push($actividades, $i);
+												$reserva->listaActividad($i);
+											}
+										}
+
+										echo "<p class='date-cart'> Habitaciones: <br></p>";
+										$reserva->listaPedido($_POST['totalHabs']);
 										$_SESSION['pedido']=$_POST['totalHabs'];
-										$reserva->calculaTotal($dias,$_POST['totalHabs']);
-										echo "€</h2>";
+										$costeHabitaciones=$reserva->calculaTotal($dias,$_POST['totalHabs']);
+										echo strtoupper("Total habitaciones: ". $costeHabitaciones)."€";
+
+										echo "<h3>";
+										echo "Total: ".$reserva->totalAPagar($costeHabitaciones,$actividades);
+										echo "€</h3>";
 									}
 								?>
 							</div>

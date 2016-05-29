@@ -66,7 +66,21 @@
 				}
 			}
 
-			echo "Total: ". $total*$dias*$personas;
+			return $total*$dias*$personas;
+		}
+
+		public function totalAPagar($costeH,$actividades){
+			$costeA = 0;
+
+			for ($i=0; $i < count($actividades); $i++) { 
+				$sentencia = "SELECT precio from actividad WHERE id = ".$actividades[$i];
+				foreach($this->mbd->query($sentencia) as $row){
+					$costeA += $row['precio'];
+				}
+				
+			}
+
+			return $costeH+$costeA;
 		}
 
 		public function listaPedido($habs){
@@ -148,6 +162,23 @@
 	          </div>";
       		}
 
+		}
+
+		public function listaActividades(){
+			$sentencia = "SELECT * from actividad";
+
+			foreach($this->mbd->query($sentencia) as $row){
+				echo "<input type='checkbox' id='act".$row['id']."' name='act".$row['id']."'/>
+			            <label for='act".$row['id']."'>".$row['nombre']." - ".$row['precio']."€ </label>
+			          <br>";
+      		}
+		}
+
+		public function listaActividad($id){
+			$sentencia = "SELECT * from actividad WHERE id=$id";
+			foreach($this->mbd->query($sentencia) as $row){
+				echo $row['nombre']." ".$row['precio']."€<br>";
+      		}
 		}
 
 	}

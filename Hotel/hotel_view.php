@@ -6,30 +6,39 @@
     <div class="parallax"><img class='filtro-slider carro-principal' src="./images/carrousel_wall.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
-
+  <script>
+    function validateForm() {
+      var ini = document.forms["formu"]["fechaInicio"].value;
+      var fin = document.forms["formu"]["fechaFin"].value;
+      if (ini == null || ini == "" || fin == null || fin == "") {
+          alert("Falta alguna fecha por poner");
+          return false;
+      }
+  }
+  </script>
 
   <div class="container">
     <div class="section">
       <div class="row" id='reservaRow'>
-          <form action="?secc=mireserva" method="POST">
+          <form action="?secc=mireserva" name="formu" onsubmit="return validateForm()" method="POST">
               <div class="input-field col s12 l2">
                 <i class="material-icons prefix">today</i>
-                <input id="FechaEntrada" type="date" name="fechaInicio" class="datepicker c-align">
+                <input id="FechaEntrada" type="date" name="fechaInicio" class="datepicker c-align" required>
                 <label for="FechaEntrada">Fecha entrada</label>
               </div>
               <div class="input-field col s12 l2">
                 <i class="material-icons prefix">today</i>
-                <input id="FechaSalida" type="date" name="fechaFin" class="datepicker c-align">
+                <input id="FechaSalida" type="date" name="fechaFin" class="datepicker c-align" required>
                 <label for="FechaSalida">Fecha salida</label>
               </div>
               <div class="input-field col s12 l2">
                 <i class="material-icons prefix">supervisor_account</i>
-                <input id="npersonas" type="number" name="nPersonas" class="c-align">
+                <input id="npersonas" type="number" name="nPersonas" class="c-align" required>
                 <label for="npersonas">Nº Personas</label>
               </div>
               <div class="input-field col s12 l2">
                 <i class="material-icons prefix">supervisor_account</i>
-                <input id="nninios" type="number" name="nninios" class="c-align">
+                <input id="nninios" type="number" name="nninios" class="c-align" required>
                 <label for="nninios">Nº Niños</label>
               </div>
               <div id='reservarButton' class="input-field col s12 l3 center">
@@ -147,4 +156,13 @@
       </div>
     </div>
 </div>
+
+<?php if(isset($_GET['datosErroneos'])){
+      echo '<div class="alert-container error">
+  <i class="icon-e fa fa-times" aria-hidden="true"></i>
+  <p class="alert-message">PC master race</p>
+  <div class="extra">cerrar</div>
+</div>';
+  }
+?>
 <!-- fin contenido principal -->

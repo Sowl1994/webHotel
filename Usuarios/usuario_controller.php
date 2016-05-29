@@ -8,8 +8,8 @@
 	}
 
 	if(isset($_POST['loginNick']) && isset($_POST['loginPass']) && $_POST['loginNick']!="" && $_POST['loginPass']!=""){
-		$user->loginUsuario();
-		header("Location: ../index.php?login=true");
+		
+		header($user->loginUsuario());
 	}
 
 	if(isset($_GET['lo'])){
