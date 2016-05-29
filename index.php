@@ -61,7 +61,7 @@ ob_start();
 	include ("./includes/prefooter.php");
 	};
 	include("./includes/footer.php");
-
+	alertwarning("Esto es una prueba de un error");
 	ob_end_flush();
 
 ?>

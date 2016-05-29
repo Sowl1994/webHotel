@@ -5,7 +5,7 @@
     echo "
     <div class='alert-container warning'>
       <i class='icon-w fa fa-exclamation-triangle' aria-hidden='true'></i>
-      <p class='alert-message'>" . $mensaje . "</p>
+      <p class='alert-message a-w'>" . $mensaje . "</p>
     </div>";
     echo "
         <script type='text/javascript'>
@@ -36,7 +36,7 @@
     echo "
     <div class='alert-container error'>
       <i class='icon-e fa fa-times' aria-hidden='true'></i>
-      <p class='alert-message'>" . $mensaje . "</p>
+      <p class='alert-message a-e'>" . $mensaje . "</p>
       <div class='extra'><a id='calert-e'>cerrar</a></div>
     </div>";
     echo "
@@ -46,14 +46,17 @@
             $('.error').removeClass('active');
           }, 90000);
         </script>";
+
+    echo" 
+    <script type='text/javascript'>
+    $('#calert-e').click(function(){
+    $('.error').removeClass('active');
+    });
+    </script>";
   }
 
 
 
 ?>
 
-<script type='text/javascript'>
-$('#calert-e').click(function(){
-  $('.error').removeClass('active');
-});
-</script>
+
