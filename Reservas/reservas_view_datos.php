@@ -1,4 +1,3 @@
-<?php echo $_POST['totalHabs']."<br>";?>
 <div class='content'>
 <div class='row'>
 <div class="col s12 l7 offset-l3 card" style='margin-top: 50px;'>
@@ -11,40 +10,52 @@
 				<a href="#" class='row-icon-proc'><i class="fa fa-credit-card-alt icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Pago</div></a>
 			</div>
 		</div><!-- fin progreso indicadores -->
-		<form id='informacion-usuario' method="post">
+		<form action="index.php?secc=mireserva2&r" id='informacion-usuario' method="post">
 			<div class='row'><!-- datos usuario -->
 				    <div class="col s12 l10 offset-l1">
 						<div class="row">
 						<h4 class='big-texth4-cart'> Información Personal </h4>
 							<div class="input-field col s12 l4">
-								<input id="Nombre" type="text" class="validate">
+							<?php 
+							if(isset($_SESSION['nombre']))
+								echo '<input id="Nombre" name="nombre" type="text" value="'.$_SESSION['nombre'].'" class="validate">';
+								else{
+							?>
+								<input id="Nombre" name="nombre" type="text" class="validate">
+							<?php }?>
 								<label for="Nombre">Nombre</label>
 							</div>
 							<div class="input-field col s12 l4">
-								<input id="apellidos" type="text" class="validate">
+								<?php 
+								if(isset($_SESSION['apellidos']))
+									echo '<input id="apellidos" name="apellidos" type="text" value="'.$_SESSION['apellidos'].'" class="validate">';
+									else{
+								?>
+									<input id="apellidos" name="apellidos" type="text" class="validate">
+								<?php }?>
 								<label for="apellidos">Apellidos</label>
-							</div>
-							<div class="input-field col s12 l4">
-								<input id="apellidos" type="text" class="validate">
-								<label for="apellidos">DNI</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s6 l3">
-								<input id="password" type="password" class="validate">
-								<label for="password">Password</label>
+							<div class="input-field col s12 l4">
+								<?php 
+								if(isset($_SESSION['dni']))
+									echo '<input id="dni" name="dni" type="text" value="'.$_SESSION['dni'].'" class="validate">';
+									else{
+								?>
+									<input id="dni" name="dni" type="text" class="validate">
+								<?php }?>
+								<label for="dni">DNI</label>
 							</div>
 							<div class="input-field col s6 l3">
-								<input id="email" type="password" class="validate">
-								<label for="email">Repite password</label>
-							</div>
-							<div class="input-field col s6 l3">
-								<input id="email" type="email" class="validate">
+							<?php 
+								if(isset($_SESSION['email']))
+									echo '<input id="email" name="email" type="email" value="'.$_SESSION['email'].'" class="validate">';
+									else{
+								?>
+									<input id="email" name="email" type="email" class="validate">
+								<?php }?>
 								<label for="email">Email</label>
-							</div>
-							<div class="input-field col s6 l3">
-								<input id="email" type="email" class="validate">
-								<label for="email">Repite Email</label>
 							</div>
 						</div>
 				    </div>  
@@ -92,8 +103,13 @@
 			<!--</div>--><!-- fin datos peronas -->
 			<div class='row'><!-- datos pago -->
 				    <div class="col s12 l10 offset-l1">
+				    	
 						<div class="row">
 						<h4 class='big-texth4-cart'> Información Pago</h4>
+						<p>
+							<input class="with-gap" name="group3" value="1" type="radio" id="t"/>
+							<label for="t">Voy a pagar con tarjeta</label>
+						</p>
 							<div class="input-field col s12 l3">
 								<input id="Nombre" type="text" class="validate">
 								<label for="Nombre">Numero de Tarjeta</label>
@@ -117,8 +133,8 @@
 							</div>
 						</div>
 						<p>
-							<input class="with-gap" name="group3" type="radio" id="test5"  />
-							<label for="test5">Voy a pagar en metalico</label>
+							<input class="with-gap" name="group3" value="2" type="radio" id="m"/>
+							<label for="m">Voy a pagar en metalico</label>
 						</p>
 				    </div>
 			</div><!-- fin datos pago -->
@@ -128,21 +144,54 @@
 						<div class="row">
 						<h4 class='big-texth4-cart'> Información adicional</h4>
 							<div class="input-field col s12">
-								<textarea id="textarea1" class="materialize-textarea"></textarea>
+								<textarea id="textarea1" name="observaciones" class="materialize-textarea"></textarea>
 	         					<label for="textarea1">Si tiene alguna necesidad, o comentario, deje información aqui</label>
 							</div>
 						</div>
 
 				    </div>
 			</div><!-- fin datos adicionales -->
-		</form>
+
+			<div class='row'><!-- informacion factura -->
+				    <div class="col s12 l10 offset-l1">
+						<div class="row">
+						<h4 class='big-texth4-cart'> Datos de la operacion</h4>
+							<div class="input-field col s12">
+								<h2 class ='big-text-cart'> Entrada </h2>
+					            <p class='date-cart'><?php echo $fechaIn; ?><br></p>
+					            <p class='small-text-cart'> A partir de las 13:00</p>
+					            <hr class='separador-cart'></hr>
+					          	<h2 class ='big-text-cart'> Salida </h2>
+					            <p class='date-cart'><?php echo $fechaS?><br></p>
+					            <p class='small-text-cart'>Hasta las 12:00 </p><br>
+					            <hr class='separador-cart'></hr>
+					            <?php 
+					            	if(!isset($_POST['totalHabs'])){
+										//Redireccion a index
+									}else{
+										echo "<p class='date-cart'> Duración estancia: ".$dias." dias<br></p>";
+										echo "<p class='date-cart'> Personas: ".$_SESSION['nPersonas']."<br></p>";
+										echo "<p class='date-cart'> Pedido: <br></p>";
+										$reserva->listaPedido($_POST['totalHabs']);
+										echo "<h2>";
+
+										$_SESSION['pedido']=$_POST['totalHabs'];
+										$reserva->calculaTotal($dias,$_POST['totalHabs']);
+										echo "€</h2>";
+									}
+								?>
+							</div>
+						</div>
+				    </div>
+			</div><!-- fin datos adicionales -->
+		
 		<div class='row'><!-- botones continuar -->
 			<div class="input-field col s12 l12  right-align " id="next-habs">
 				<div class='col s12 l2  bt-movil'>
-						<button class="btn col s12 waves-effect waves-light red left" type="submit" name="action">Cancelar</button>
+						<button class="btn col s12 waves-effect waves-light red left"  name="action">Cancelar</button>
 				</div>
 				<div class='col s12 l3 offset-l4 bt-derecha  bt-movil'>
-						<button class="btn col s12 waves-effect waves-light blue-grey" type="submit" name="action">Anterior 
+						<button class="btn col s12 waves-effect waves-light blue-grey"  name="action">Anterior 
 		                <i class="material-icons left rotado">trending_flat</i></button>
 
 				</div>
@@ -154,6 +203,7 @@
 
 	        </div>
 		</div><!-- fin botones continuar -->
+		</form>
 </div>
 </div>
 </div>

@@ -38,14 +38,16 @@
     <!-- segunda columna -->
     <div class="col s12 l3 card" id='big-res-carrito' >
           <h2 class ='big-text-cart'> Entrada </h2>
-            <p class='date-cart'><?php echo $fechaIn?><br></p>
+            <p class='date-cart'><?php echo $fechaIn; echo " (Estancia de ".$dias." dias)";?><br></p>
             <p class='small-text-cart'> A partir de las 13:00</p>
             <hr class='separador-cart'></hr>
           <h2 class ='big-text-cart'> Salida </h2>
             <p class='date-cart'><?php echo $fechaS?><br></p>
-            <p class='small-text-cart'>Hasta las 12:00 </p>
+            <p class='small-text-cart'>Hasta las 12:00 </p><br>
     </div>
+
     <div class="col s12 l3 card" id='big-res-carrito-second'>
+    <br>
       <!--<div class='row' style=' margin-bottom: 0px; padding-top: 5px;'>
         <div class='col l6' ><p class='hab-cart'>Carrito de la compra</p></div>
         <div class='col l2 '><p class='hab-cart'></p></div>
@@ -57,9 +59,9 @@
         <div class='col l4 right' style='margin-right: -10px;' ><p class='hab-cart'>0 EUR</p></div>
       </div><hr class='separador-compra-cart'></hr>-->
       <div class='row' style=' margin-bottom: 10px;'>
-        <div class='col l3' style='margin-top:5px;' ><a style="color: #26a69a; font-size: 1.3em; margin-top:10px;"><?php echo $_SESSION['nPersonas']?> <i class="fa fa-users" aria-hidden="true"></i></a></div>
+        <div class='col l3' style='margin-top:5px;' ><a style="color: #26a69a; font-size: 1.3em; margin-top:10px;"><span id="totalPersonas"><?php echo $_SESSION['nPersonas']?></span> <i class="fa fa-users" aria-hidden="true"></i></a></div>
         <div class='col l2' ><p class='hab-cart'>Total:</p></div>
-        <div class='col l5 right' style='margin-right: -40px;' ><p id="total" class='hab-cart'>0€</p></div>  
+        <div class='col l5 right' style='margin-right: -40px;' ><p id="total" class='hab-cart'>0€/noche</p></div>  
       </div>
     </div>
     <div class="col s12 l3 card" id='big-res-carrito-second'>
@@ -70,11 +72,6 @@
     </div>
     <!-- fin segunda columna -->
 
-    <div class="col s12 l3 card" id='big-res-carrito-prueba'>
-      
-    </div>
-
-
     </div><!-- fin row--> 
   </div><!-- fin content-->
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -83,6 +80,10 @@
   <script>
     var pedido = [];
     function aniadeHabitacion(id,precio,nombre){
+
+        var nPersonas = parseInt(document.getElementById("totalPersonas").innerHTML);
+        precio = parseInt(precio)*nPersonas;
+
         if(pedido.indexOf(id) == -1){
           var nombreHabitacion = document.createElement("div");
           nombreHabitacion.className="col l6";
@@ -121,16 +122,13 @@
           document.getElementById("t"+id).innerHTML = "x "+nHi;
         }
 
+        
         var precioTotal = parseInt(document.getElementById("total").innerHTML);
-        document.getElementById("total").innerHTML = precioTotal+precio+"€";
+        document.getElementById("total").innerHTML = (precioTotal+precio)+"€/noche";
 
         pedido.push(id);
-        $('#ped').val(JSON.stringify(pedido));
+        $('#ped').val(JSON.stringify(pedido.sort()));
 
     }
-
-    /*function muestraHabs(){
-        alert($("#p").val());
-    }*/
   </script>
 </form>

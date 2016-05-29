@@ -36,6 +36,10 @@
 			}else{
 				session_start();
 				$_SESSION['session_username']= $row['login'];
+				$_SESSION['nombre'] = $row['nombre'];
+				$_SESSION['apellidos'] = $row['apellidos'];
+				$_SESSION['dni'] = $row['dni'];
+				$_SESSION['email'] = $row['email'];
 				$_SESSION['session_id']= $row['id'];
 				$_SESSION['session_pass']= $row['pass'];
 				$_SESSION['isAdmin']= $row['is_admin'];
