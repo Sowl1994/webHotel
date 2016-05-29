@@ -170,11 +170,12 @@
 				$restantes = $this->habitacionesReservadas($row['id'],$fechaI,$fechaS);
 				$disponibles = $row['total_habitaciones']-$restantes;
 				$precio = $this->calculaPorDisponible($row['id']);
+				$foto = explode(";", $row['imagen']);
 
 				echo "<div class='col l4'>
 	            <div class='card'>
 	              <div class='card-image waves-effect waves-block waves-light'>
-	                <img class='activator' src='".$row['imagen']."'>
+	                <img class='activator' src='".$foto[0]."'>
 	              </div>
 	              <div class='card-proc '>
 	                <span class='activator grey-text text-darken-4 card-proc-text'>".$row['nombre']."<i class='material-icons right dots-card-reserva'>more_vert</i></span>

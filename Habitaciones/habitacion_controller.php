@@ -13,6 +13,7 @@
 		$totalHabitaciones = $habitacion->getTotalHabs($_GET['tipo']);
 		$descripcion = $habitacion->getDescripcionESP($_GET['tipo']);
 		$totalTipos = $habitacion->getCount();
+		$foto = $habitacion->getCarrousel($_GET['tipo']);
 		require_once("./Habitaciones/habitacion_view.php");
 	/*}else if ($_GET['tipo'] == 2) {
 		include("./Habitaciones/hTriple.php");

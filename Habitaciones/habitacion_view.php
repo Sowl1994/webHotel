@@ -11,11 +11,12 @@
 				      <div id="banner-slide">
 				        <!-- start Basic Jquery Slider -->
 				        <ul class="bjqs">
-				          <li><img src="images/habitaciones/doble/d1.jpg"></li>
-				          <li><img src="images/habitaciones/doble/d2.jpg"></li>
-				          <li><img src="images/habitaciones/doble/d3.jpg"></li>
-				          <li><img src="images/habitaciones/doble/d4.jpg"></li>
-				          <li><img src="images/habitaciones/doble/d5.jpg"></li>
+							<?php 
+							$cont = 0;
+							foreach ($foto as $key) {
+								if( $cont < 5) {echo "<li><img src='" . $key . "'></li>";};
+								$cont++;
+							}?>
 				        </ul>
 				        <!-- end Basic jQuery Slider -->
 

@@ -51,8 +51,10 @@
 			$sentencia =$this->mbd->prepare("SELECT imagen from `habitacion` WHERE id=".$id);
 			$sentencia->execute();
 			$row = $sentencia->fetch();
-			return $row[0];
+			$foto = explode(";", $row[0]);
+			return $foto[0];
 		}
+
 
 		public function getCount(){
 			$sentencia =$this->mbd->prepare("SELECT COUNT(id) from `habitacion`");
@@ -150,6 +152,19 @@
 				$totalHabs++;
 			}
 	  }
+
+
+	public function getCarrousel($id){
+		$sentencia =$this->mbd->prepare("SELECT imagen from `habitacion` WHERE id=".$id);
+		$sentencia->execute();
+		$row = $sentencia->fetch();
+		$foto = explode(";", $row[0]);
+		return $foto;
+	}
+
+
+
+
 
 	}
 ?>
