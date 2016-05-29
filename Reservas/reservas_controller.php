@@ -8,7 +8,7 @@
 		//Dias en formato DateTime
 
 		if($_POST['fechaInicio'] >= $_POST['fechaFin'])  {
-			header("Location:../index.php?fechaErroneaEMS");
+			header("Location:./index.php?fechaErroneaEMS");
 		}
 
 		$originalDate = $_POST['fechaInicio'];

@@ -52,12 +52,36 @@
 			return intval($row['precio_base']*$add);
 		}
 
+		public function checkPromo($codigo){
+			$sentencia =$this->mbd->prepare("SELECT precio FROM `promocion` WHERE codprom=".$codigo."");
+			$sentencia->execute();
+			$row = $sentencia->fetch();
+
+			return $row['precio'];
+		}
+
+		public function calculaTotalConPromo($dias,$habs,$descuento){
+			$totalHabs = json_decode($habs);
+			$personas = $_SESSION['nPersonas'];
+			$personas = 1;
+			$total = 0;
+			
+			for ($i=0; $i < count($totalHabs); $i++) { 
+				$sentencia = "SELECT nombre,precio_base from habitacion WHERE id = ".$totalHabs[$i];
+				foreach($this->mbd->query($sentencia) as $row){
+					$total += $this->calculaPorDisponible($totalHabs[$i]);
+				}
+			}
+
+			$descuentoAplicado =($total*$dias*$personas)*$descuento/100;
+			return ($total*$dias*$personas)- $descuentoAplicado;
+		}
+
 		public function calculaTotal($dias,$habs){
 			$totalHabs = json_decode($habs);
 			$personas = $_SESSION['nPersonas'];
 			$personas = 1;
 			$total = 0;
-
 
 			
 			for ($i=0; $i < count($totalHabs); $i++) { 

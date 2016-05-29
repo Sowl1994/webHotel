@@ -177,9 +177,14 @@
 										//Redireccion a index
 									}else{
 										echo "<p class='date-cart mm'> Duración estancia: ".$dias." dias<br></p>";
-										echo "<p class='date-cart mm'> Personas: ".$_SESSION['nPersonas']."<br></p>";
+										
+										if(isset($_POST['codProm'])){
+											$desc = $reserva->checkPromo($_POST['codProm']);
+											if($desc > 0)
+											echo "<p class='date-cart mm'> Promocion: ".$_POST['codProm']."<br></p>";
+										}
 
-										echo "<p class='date-cart mm'> Promociones: <br></p>";
+										echo "<p class='date-cart mm'> Actividades: <br></p>";
 
 										$actividades = array();
 										for ($i=0; $i < 4; $i++) { 
@@ -193,7 +198,11 @@
 										echo "<p class='date-cart mm'> Habitaciones: <br></p>";
 										$reserva->listaPedido($_POST['totalHabs']);
 										$_SESSION['pedido']=$_POST['totalHabs'];
+										if($reserva->checkPromo($_POST['codProm'])>0)
+											$costeHabitaciones=$reserva->calculaTotalConPromo($dias,$_POST['totalHabs'],$desc);
+										else
 										$costeHabitaciones=$reserva->calculaTotal($dias,$_POST['totalHabs']);
+										
 										echo strtoupper("Total habitaciones: ". $costeHabitaciones)."€";
 
 										echo "<h3>";

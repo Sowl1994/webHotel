@@ -74,7 +74,7 @@
     </div>
     <div class="col s12 l3 card" id='big-res-carrito-second'>
       <div class="input-field col s12">
-            <input id="codigoprom" type="text" class="validate">
+            <input id="codigoprom" name="codProm" type="text" class="validate">
             <label for="codigoprom">Codigo promocional</label>
       </div>
       <div class="input-field col s12">
