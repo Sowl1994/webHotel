@@ -55,6 +55,7 @@
 		public function calculaTotal($dias,$habs){
 			$totalHabs = json_decode($habs);
 			$personas = $_SESSION['nPersonas'];
+			$personas = 1;
 			$total = 0;
 
 

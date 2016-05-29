@@ -33,12 +33,12 @@
               </div>
               <div class="input-field col s12 l2">
                 <i class="material-icons prefix">supervisor_account</i>
-                <input id="npersonas" type="number" name="nPersonas" class="c-align" required>
+                <input id="npersonas" type="number" min=1 name="nPersonas" class="c-align" required>
                 <label for="npersonas">Nº Personas</label>
               </div>
               <div class="input-field col s12 l2">
                 <i class="material-icons prefix">supervisor_account</i>
-                <input id="nninios" type="number" name="nninios" class="c-align" required>
+                <input id="nninios" type="number" value=0 min=0 name="nninios" class="c-align" required>
                 <label for="nninios">Nº Niños</label>
               </div>
               <div id='reservarButton' class="input-field col s12 l3 center">
@@ -160,6 +160,9 @@
 <?php 
   if(isset($_GET['datosErroneos'])){
     alertwarning("Datos incorrectos.");
+  }
+  if(isset($_GET['fechaErroneaEMS'])){
+    alerterror("Las fechas son erroneas");
   }
 ?>
 <!-- fin contenido principal -->

@@ -134,6 +134,14 @@ hr.separador-cart:after {
     margin-bottom: 10px;
 }
 
+
+.hab-cart-total{
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 0rem;
+    margin-top : 15px;
+}
+
 .separador-compra-cart{
           border: 0;
     height: 1px;
@@ -171,4 +179,9 @@ hr.separador-cart:after {
        margin-left: 0px;
     }
 
+}
+
+.mm{
+    padding-top: 10px;
+    line-height: 1em;
 }

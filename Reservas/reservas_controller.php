@@ -1,8 +1,16 @@
 <?php
 	require_once("./Reservas/reservas_model.php");
 	
+
+
+
 	if(isset( $_POST['fechaInicio']) && isset($_POST['fechaFin'])){
 		//Dias en formato DateTime
+
+		if($_POST['fechaInicio'] >= $_POST['fechaFin'])  {
+			header("Location:../index.php?fechaErroneaEMS");
+		}
+
 		$originalDate = $_POST['fechaInicio'];
 		$fechaIn = date("Y-m-d H:i:s", strtotime($originalDate));
 		$originalDateo = $_POST['fechaFin'];

@@ -95,11 +95,11 @@
     function aniadeHabitacion(id,precio,nombre){
 
         var nPersonas = parseInt(document.getElementById("totalPersonas").innerHTML);
-        precio = parseInt(precio)*nPersonas;
+        precio = parseInt(precio)*1;
 
         if(pedido.indexOf(id) == -1){
           var nombreHabitacion = document.createElement("div");
-          nombreHabitacion.className="col l6";
+          nombreHabitacion.className="col l7";
           var parrafoNombre = document.createElement("p");
           parrafoNombre.innerHTML=nombre;
 
@@ -110,7 +110,7 @@
           parrafoTotal.innerHTML="x "+ 1;
 
           var precioHabitacion = document.createElement("div");
-          precioHabitacion.className="col l4 right";
+          precioHabitacion.className="col l3 right";
           precioHabitacion.style.marginRight = "-10px";
           var parrafoPrecio = document.createElement("p");
           parrafoPrecio.innerHTML=precio+" €";
