@@ -206,7 +206,8 @@
 										echo strtoupper("Total habitaciones: ". $costeHabitaciones)."€";
 
 										echo "<h3>";
-										echo "Total: ".$reserva->totalAPagar($costeHabitaciones,$actividades);
+										$_SESSION['total'] = intval($reserva->totalAPagar($costeHabitaciones,$actividades));
+										echo "Total: ".$_SESSION['total'];
 										echo "€</h3>";
 									}
 								?>

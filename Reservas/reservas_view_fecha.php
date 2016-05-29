@@ -24,8 +24,6 @@
     }
     </script>
 
-
-
 		<div class='row'><!-- calendario -->
 			<div class='input-field col l10 offset-l1'>
 			<form action="?secc=mireserva" name="formu" onsubmit="return validateForm()" method="POST">

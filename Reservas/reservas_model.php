@@ -25,6 +25,13 @@
 			return $row[0];
 		}
 
+		public function getPrecio($id){
+			$sentencia =$this->mbd->prepare("SELECT precio_base FROM `habitacion` WHERE id=".$id."");
+			$sentencia->execute();
+			$row = $sentencia->fetch();
+			return $row[0];
+		}
+
 		public function getTotalDias($fechaIni,$fechaSal){
 			$f1 = new DateTime($fechaIni);
 			$f2 = new DateTime($fechaSal);
@@ -123,7 +130,6 @@
 
 		public function reservar($pedido){
 			if(isset($_SESSION['session_id'])){
-			 	echo "usuario registrado";
 			 	try{
 					if (isset($_SESSION['session_id'])) {
 
@@ -131,11 +137,11 @@
 						$sentencia = $this->mbd->prepare("INSERT INTO `reserva` (`cod_usuario`, `cod_habitacion`, `dia_entrada`, `dia_salida`, `n_adultos`, `n_ninios`, `observaciones`, `precio_final`)
 						VALUES (:cod_user, :cod_hab, :fI, :fS, :nAd, :nNi, :obs, :precio)");
 
-						
-						for ($i=0; $i < count($pedido); $i++) { 
-							$habi = $pedido[$i];
+						$total=json_decode($pedido);
+						for ($i=0; $i < count($total); $i++) { 
+							$habi = $total[$i];
 							$nN = 0;
-							$p = 1;
+							$p = $this->getPrecio($total[$i]);/*$this->reserva->totalAPagar($costeHabitaciones,$actividades)*/;
 							$sentencia->bindParam(':cod_user', $_SESSION['session_id']);
 							$sentencia->bindParam(':cod_hab', $habi);
 							$sentencia->bindParam(':fI', $_SESSION['fechaIni']);
