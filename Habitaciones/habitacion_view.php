@@ -26,8 +26,8 @@
 
 	<div class="row">
 		<div class="input-field col s12 l12 center">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Reservar Ahora - <?php echo $precio;?>€
-                </button>
+                <a href="index.php?secc=p1" class="btn waves-effect waves-light" type="submit" name="action">Reservar Ahora - <?php echo $precio;?>€
+                </a>
         </div>
 	</div>
 

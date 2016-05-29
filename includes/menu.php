@@ -33,7 +33,6 @@
         <li><a href="index.php?secc=fotos">Fotos</a></li>
         <li><a href="index.php?secc=contacto">Contacto y mapa</a></li>
        <!-- <li><a href="index.php?secc=opiniones">Opiniones</a></li>-->
-        <li><a href="index.php?secc=mireserva">Mi reserva</a></li>
         </ul>
         <!-- NAV MOBIL-->
           <ul id="nav-mobile" class="side-nav">
@@ -54,7 +53,6 @@
                 </ul>
               <li><a href="index.php?secc=fotos">Fotos</a></li>
               <li><a href="index.php?secc=contacto">Contacto y mapa</a></li>
-              <li><a href="index.php?secc=mireserva">Mi reserva</a></li>
 
           </ul>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>

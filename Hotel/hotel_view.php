@@ -157,12 +157,9 @@
     </div>
 </div>
 
-<?php if(isset($_GET['datosErroneos'])){
-      echo '<div class="alert-container error">
-  <i class="icon-e fa fa-times" aria-hidden="true"></i>
-  <p class="alert-message">PC master race</p>
-  <div class="extra">cerrar</div>
-</div>';
+<?php 
+  if(isset($_GET['datosErroneos'])){
+    alertwarning("Datos incorrectos.");
   }
 ?>
 <!-- fin contenido principal -->

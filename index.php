@@ -7,13 +7,9 @@ ob_start();
 	require_once("./conexion/conexion.php");
 
 	if(!isset($_GET['secc'])){
-		//include("./includes/Principal.php");
-		//echo "<div id='main-container'>";
 		require_once("./Hotel/hotel_controller.php");
-		//echo "</div>";
 	}else{ 
 		
-
 		if(isset($_GET['secc']) && $_GET['secc'] == 'mireserva'){
 			echo "<div id='main-container' style='width: 100%;'>";
 		}else{
@@ -25,15 +21,6 @@ ob_start();
 			require_once("./promociones/promoActividades_controller.php");
 		}else if($_GET['secc'] == "habs"){
 			require_once("./Habitaciones/habitacion_controller.php");
-			/*if(!isset($_GET['tipo'])){
-				include("./Habitaciones/habitaciones.php");
-			}else if ($_GET['tipo'] == 1) {
-				include("./Habitaciones/hDoble.php");
-			}else if ($_GET['tipo'] == 2) {
-				include("./Habitaciones/hTriple.php");
-			}else if ($_GET['tipo'] == 3) {
-				include("./Habitaciones/hDSuperior.php");
-			}*/
 		}else if($_GET['secc'] == "servicios"){
 			include("./servicios/servicios.php");
 		}else if($_GET['secc'] == "fotos"){
@@ -42,6 +29,8 @@ ob_start();
 			include("./contacto/contacto.php");
 		}else if($_GET['secc'] == "opiniones"){
 			include("./proximamente/template.php");
+		}else if($_GET['secc'] == "p1"){
+			require_once("./Reservas/reservas_controller.php");
 		}else if($_GET['secc'] == "mireserva"){
 			require_once("./Reservas/reservas_controller.php");
 		}else if($_GET['secc'] == "mireserva2"){
@@ -61,7 +50,6 @@ ob_start();
 	include ("./includes/prefooter.php");
 	};
 	include("./includes/footer.php");
-	alertwarning("Esto es una prueba de un error");
 	ob_end_flush();
 
 ?>

@@ -19,7 +19,9 @@
 	$reserva = new Reserva();
 	$dias = $reserva->getTotalDias($_SESSION['fechaIni'],$_SESSION['fechaF']);
 
-	if($_GET['secc'] == "mireserva"){
+	if($_GET['secc'] == "p1"){
+		require_once("./Reservas/reservas_view_fecha.php");
+	}else if($_GET['secc'] == "mireserva"){
 		/*if($fechaIn<$fechaS)*/ require_once("./Reservas/reservas_view_habitaciones.php");
 	}else if($_GET['secc'] == "mireserva2"){
 		if(!isset($_GET['r']))
