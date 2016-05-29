@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 	session_start();
 
 	require_once("./includes/head.php"); 
@@ -64,4 +65,5 @@
 	include ("./includes/prefooter.php");
 	};
 	include("./includes/footer.php"); 
+	ob_end_flush();
 ?>

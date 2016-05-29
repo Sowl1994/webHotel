@@ -4,20 +4,20 @@
               <a id="logo-container" href="index.php" class="brand-logo"><img class='logo-principal' alt='Hotel Plaza Nueva' src="./images/logo-esp-gray.png"></a>
         <!-- LOGIN -->
          <ul class="right hide-on-med-and-down">
-         <?php if(isset($_SESSION['session_username'])){ ?>
-         <li><a  class="dropdown-button" href="#!" data-activates="loginDesplegable"><i class="material-icons right">perm_identity</i>Bienvenido, <?php echo $_SESSION['session_username']; ?></a></li>
+         <?php if(isset($_SESSION['session_username'])){?>
+         <li><a  class="dropdown-button" href="#!" data-activates="loginDesplegable"><i class="material-icons right">perm_identity</i>Bienvenido, <?php echo $_SESSION['session_username'];?></a></li>
           <ul id="loginDesplegable" class="dropdown-content">
               <li><a class="center" href="#">Area Personal</a></li>
               <li><a class="center" href="#">Hacer reserva</a></li>
-              <li><!--<i class="material-icons right">power_settings_new</i>--><a class="center" href="./Usuarios/usuario_controller.php?lo">Logout</a></li>
+              <li><a class="center" href="./Usuarios/usuario_controller.php?lo">Logout</a></li>
           </ul>
-         <?php }else{ ?>
+         <?php }else{?>
           <li><a  class="dropdown-button" href="#!" data-activates="loginDesplegable"><i class="material-icons right">supervisor_account</i>Acceder</a></li>
           <ul id="loginDesplegable" class="dropdown-content">
               <li><a class="modal-trigger center" href="#modal-login">Acceder</a></li>
               <li><a class="modal-trigger center" href="#modal-registro">Registro</a></li>
           </ul>
-          <?php } ?>
+          <?php }?>
         </ul>
         <!-- FIN LOGIN -->
       <div class="nav-wrapper container ">
