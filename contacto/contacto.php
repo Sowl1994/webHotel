@@ -11,10 +11,10 @@
 
   <div class="container">
   <div class="row">
-    <form class="col s12 l6" onsubmit="return validateForm()" method="POST">
+    <form class="col s12 l6"  action="./contacto/mandaMail.php" onsubmit="return validateForm()" method="POST">
       <div class="row">
         <div class="input-field col s6 l12">
-          <input  id="first_name" type="text" class="validate" required>
+          <input  id="first_name" type="text" name="nombre" class="validate" required>
           <label for="first_name">Nombre completo</label>
         </div>
         <div class="input-field col s6 l12">
@@ -23,11 +23,11 @@
         </div>  
 
         <div class="input-field col s12 l12">
-          <input id="formEmail" type="email" class="validate" required>
+          <input id="formEmail" type="email" name="mail" class="validate" required>
           <label for="formEmail">Email</label>
         </div>
         <div class="input-field col s12 l12">
-          <textarea rows="4" cols="20" id="textarea1" class="materialize-textarea"  placeholder="aquí..." required></textarea>
+          <textarea rows="4" cols="20" id="textarea1" name="contenido" class="materialize-textarea"  placeholder="aquí..." required></textarea>
           <label for="textarea1">Escriba lo que necesite</label>
         </div>
         <div class="input-field col s12 l12 center">

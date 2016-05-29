@@ -37,6 +37,7 @@
 			require_once("./Reservas/reservas_view_datos.php");
 		else{
 			$reserva->reservar($_SESSION['pedido']);
+			require_once("./Reservas/mandaMail.php");
 			header("Location:index.php?reserva=true");
 		}
 	}
