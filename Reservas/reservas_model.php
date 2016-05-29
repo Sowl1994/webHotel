@@ -32,6 +32,26 @@
 			return $dias+1;
 		}
 
+		public function calculaPorDisponible($id){
+			$totalH = $this->getTotalHabs($id);
+			$sentencia =$this->mbd->prepare("SELECT precio_base FROM `habitacion` WHERE id=".$id."");
+			$sentencia->execute();
+			$row = $sentencia->fetch();
+
+		    $habitacionesOcupadas=$this->habitacionesReservadas($id,$_SESSION['fechaIni'],$_SESSION['fechaF']);
+		    $porcentajeLibres = ($totalH-$habitacionesOcupadas)/$totalH;
+		    $add = 1;
+
+		    if($porcentajeLibres <= 0.85){
+		    	$add +=0.1;
+		    }else if($porcentajeLibres <= 0.5){
+		    	$add +=0.3;
+		    }else if($porcentajeLibres <= 0.2){
+		    	$add +=0.5;
+		    }
+			return intval($row['precio_base']*$add);
+		}
+
 		public function calculaTotal($dias,$habs){
 			$totalHabs = json_decode($habs);
 			$personas = $_SESSION['nPersonas'];
@@ -42,7 +62,7 @@
 			for ($i=0; $i < count($totalHabs); $i++) { 
 				$sentencia = "SELECT nombre,precio_base from habitacion WHERE id = ".$totalHabs[$i];
 				foreach($this->mbd->query($sentencia) as $row){
-					$total += $row['precio_base'];
+					$total += $this->calculaPorDisponible($totalHabs[$i]);
 				}
 			}
 
@@ -56,7 +76,7 @@
 				$cantidad = array_count_values($totalHabs);
 				$sentencia = "SELECT id,nombre,precio_base from habitacion WHERE id = ".$totalHabs[$i];
 				foreach($this->mbd->query($sentencia) as $row){
-					echo $row['nombre']." ".$row['precio_base']."€ "./*$cantidad[$row['id']].*/"<br>";
+					echo $row['nombre']." ".$this->calculaPorDisponible($row['id'])."€ "./*$cantidad[$row['id']].*/"<br>";
 				}
 				
 			}
@@ -104,6 +124,7 @@
 			foreach($this->mbd->query($sentencia) as $row){
 				$restantes = $this->habitacionesReservadas($row['id'],$fechaI,$fechaS);
 				$disponibles = $row['total_habitaciones']-$restantes;
+				$precio = $this->calculaPorDisponible($row['id']);
 
 				echo "<div class='col l4'>
 	            <div class='card'>
@@ -116,7 +137,8 @@
 	              <div class='card-proc-action'>
 	                <a style='color: #26a69a; font-size: 1.4em; margin-left:10px;'>".$row['pax']." <i class='fa fa-users' aria-hidden='true'></i></a>
 	                <a style='color: green; font-size: 1.4em; margin-left:10px;'>".$disponibles."/".$row['total_habitaciones']." <i class='fa fa-check' aria-hidden='true'></i></a>
-	                <a href='#' id=hab".$row['id']." class='right card-proc-add' style='font-size:1.1em;' onclick='aniadeHabitacion(".$row['id'].",".$row['precio_base'].",`".$row['nombre']."`)'>Añadir</a>
+	                <a style='color: green; font-size: 1.4em; margin-left:10px;'>".$precio."€</a>
+	                <a href='#' id=hab".$row['id']." class='right card-proc-add' style='font-size:1.1em;' onclick='aniadeHabitacion(".$row['id'].",".$precio.",`".$row['nombre']."`)'>Añadir</a>
 	              </div>
 	              <div class='card-reveal'>
 	                <span class='card-title grey-text text-darken-4'>".$row['nombre']."<i class='material-icons right'>close</i></span>
