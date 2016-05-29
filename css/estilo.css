@@ -24,6 +24,16 @@ display:inline-block;
   margin-left: 75px;
 }
 
+.info-equip{
+  font-size: 1.7em;
+  font-weight: 400;
+}
+
+.facility{
+      border-bottom: 1px solid #eee;
+      padding-bottom: 3px;
+
+}
 
 .filtro-slider{
       -webkit-filter: grayscale(60%);
@@ -35,7 +45,7 @@ display:inline-block;
 }
 
 #reservaRow{
-  padding-left: 80px;
+/*  padding-left: 80px;*/
 }
 
 .c-align{

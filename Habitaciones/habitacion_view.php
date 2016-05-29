@@ -28,8 +28,7 @@
 
 	<div class="row">
 		<div class="input-field col s12 l12 center">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Reservar Ahora
-                  <i class="material-icons right">done</i>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Reservar Ahora - 10€
                 </button>
         </div>
 	</div>
@@ -40,9 +39,12 @@
 		      <div class='info-hotel-atributos'>
 		      	<label class='label-info-atrib'>Numero maximo de personas:</label><p class='n-attrib'>  <?php echo $maxPax?></p>
 		      	<br>
+		      	<!--
 				<label class='label-info-atrib'>Tamaño de la(s) cama(s):</label><p class='n-attrib'>  2</p>
 				<br>
 				<label class='label-info-atrib'>Tamaño de la habitación</label> <p class='n-attrib'>  182cm</p>
+
+				-->
 		      </div>
 		      <div class='info-hotel-descripcion' style='text-align:justify;'>
 		      	<p><?php echo $descripcion?></p>
@@ -77,14 +79,14 @@
 		</div>		
 	</div>
 	<div class="row">
-		<div class="input-field col s12 l12 left-align "  id='prev-habs'>
+		<div class="input-field col s12 l6 left-align "  id='prev-habs'>
 			<?php $prev = intval($_GET['tipo'])-1; if($prev < 1) $prev=$totalTipos;
 				  echo "<a href='index.php?secc=habs&tipo=".$prev."'>";
 			?>	<button class="btn waves-effect waves-light blue-grey" type="submit" name="action">Habitacion Anterior
                   <i class="material-icons left">navigate_before</i>
                 </button></a>
         </div>
-		<div class="input-field col s12 l12 right-align "  id='next-habs'>
+		<div class="input-field col s12 l6 right-align "  id='next-habs'>
 			<?php $next = intval($_GET['tipo'])+1; if($next > $totalTipos) $next=1;
 				  echo "<a href='index.php?secc=habs&tipo=".$next."'>";
 			?>	<button class="btn waves-effect waves-light blue-grey" type="submit" name="action">Siguiente Habitacion

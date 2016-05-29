@@ -12,12 +12,12 @@
     <div class="section">
       <div class="row" id='reservaRow'>
           <form action="?secc=mireserva" method="POST">
-              <div class="input-field col s12 l3">
+              <div class="input-field col s12 l2">
                 <i class="material-icons prefix">today</i>
                 <input id="FechaEntrada" type="date" name="fechaInicio" class="datepicker c-align">
                 <label for="FechaEntrada">Fecha entrada</label>
               </div>
-              <div class="input-field col s12 l3">
+              <div class="input-field col s12 l2">
                 <i class="material-icons prefix">today</i>
                 <input id="FechaSalida" type="date" name="fechaFin" class="datepicker c-align">
                 <label for="FechaSalida">Fecha salida</label>
@@ -27,7 +27,12 @@
                 <input id="npersonas" type="number" name="nPersonas" class="c-align">
                 <label for="npersonas">Nº Personas</label>
               </div>
-              <div id='reservarButton' class="input-field col s12 l4 center">
+              <div class="input-field col s12 l2">
+                <i class="material-icons prefix">supervisor_account</i>
+                <input id="nninios" type="number" name="nninios" class="c-align">
+                <label for="nninios">Nº Niños</label>
+              </div>
+              <div id='reservarButton' class="input-field col s12 l3 center">
                 <button class="btn waves-effect waves-light" type="submit" name="action">Reservar
                   <i class="material-icons right">send</i>
                 </button>
@@ -63,8 +68,85 @@
         </div>
     </div>
 
-
-    <div class='espacio'>
+    <div class='container'>
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Equipamiento</h4>
+          <p style=' text-align: justify;' class="left-align light">
+              <div class='row'>
+                <div class='col s12 l3'>
+                    <h4 class='info-equip'>General</h4>
+                    <ul class="facility-list">   
+                      <li class="facility">Habitaciones no fumadores</li>
+                      <li class="facility">Aire Acondicionado</li> 
+                      <li class="facility">Adaptado personas de movilidad reducida</li> 
+                      <li class="facility">Prohibido fumar en todo el establecimiento</li> 
+                      <li class="facility">Ascensor</li> 
+                      <li class="facility">Calefacción</li> 
+                    </ul>
+                </div>
+                 <div class='col s12 l3'>
+                    <h4 class='info-equip'> Comida y Bebida </h4>
+                    <ul class="facility-list">   
+                      <li class="facility">Bar</li>
+                      <li class="facility">Servicio de habitaciones</li> 
+                      <li class="facility">Restaurante (a la carta)</li>
+                      <li class="facility">Desayuno en la habitación</li>
+                      <li class="facility">Snack-bar</li>
+                    </ul>
+                </div>
+                <div class='col s12 l3'>
+                    <h4 class='info-equip'>Servicios de recepción</h4>
+                    <ul class="facility-list">   
+                      <li class="facility">Recepción 24 horas</li>
+                      <li class="facility">Servicio de conserjeria</li> 
+                      <li class="facility">Información turistica</li> 
+                      <li class="facility">Venta de entradas</li> 
+                      <li class="facility">GuardaEquipaje</li> 
+                      <li class="facility">Caja fuerta</li> 
+                    </ul>
+                </div>
+                <div class='col s12 l3'>
+                    <h4 class='info-equip'> Internet </h4>
+                    <ul class="facility-list">   
+                      <li class="facility">Conexión WiFi gratuita</li>
+                      <li class="facility">WiFi en todo el alojamiento</li> 
+                      <li class="facility">Internet</li>
+                    </ul>
+                </div>
+                <div class='col s12 l3'>
+                    <h4 class='info-equip'>Familiar</h4>
+                    <ul class="facility-list">   
+                      <li class="facility">Habitaciones Familiares</li>
+                      <li class="facility">Niñera / Servicios infantiles</li> 
+                    </ul>
+                </div>
+                <div class='col s12 l3'>
+                    <h4 class='info-equip'>Esqui</h4>
+                    <ul class="facility-list">   
+                      <li class="facility">Esqui</li>
+                    </ul>
+                </div>
+                <div class='col s12 l3'>
+                    <h4 class='info-equip'>Spa y bienestar</h4>
+                    <ul class="facility-list">   
+                      <li class="facility">Masajes</li>
+                    </ul>
+                </div>
+                <div class='col s12 l3'>
+                    <h4 class='info-equip'>Servicio de limpieza</h4>
+                    <ul class="facility-list">   
+                      <li class="facility">Servicio diario de camarera de pisos</li>
+                      <li class="facility">Servicio de lavanderia</li>
+                    </ul>
+                </div>
+              </div>
+          </p>
+        </div>
+      </div>
     </div>
+
+
 </div>
 <!-- fin contenido principal -->
