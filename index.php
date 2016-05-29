@@ -43,7 +43,10 @@ if(!isset($_GET['secc'])){
 	}else if($_GET['secc'] == "opiniones"){
 		include("./proximamente/template.php");
 	}else if($_GET['secc'] == "mireserva"){
-		include("./proximamente/paso2.php");
+		require_once("./Reservas/reservas_controller.php");
+		//include("./proximamente/template.php");
+	}else if($_GET['secc'] == "mireserva2"){
+		include("./proximamente/template.php");
 	}
 	echo "</div>";
 }

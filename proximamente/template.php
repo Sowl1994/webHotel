@@ -1,4 +1,4 @@
-
+<?php echo $_POST['totalHabs']?>
 <div class='content'>
 <div class='row'>
 <div class="col s12 l7 offset-l3 card" style='margin-top: 50px;'>
