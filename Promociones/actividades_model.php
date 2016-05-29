@@ -4,13 +4,15 @@
 	   var $imagen;
 	   var $cabecera;
 	   var $descripcion;
+	   var $precio;
 	   
 	  
-	   function Actividad($imagen,$cabecera,$descripcion) {
+	   function Actividad($imagen,$cabecera,$descripcion,$precio) {
 	      $this->imagen = $imagen;
 	      $this->cabecera = $cabecera;
 	      $this->descripcion = $descripcion;
 	      $this->mbd=Conexion::conexionBD();
+	      $this->precio = $precio;
 	   }
 
 	  function printActividadesLeft(){
@@ -22,10 +24,7 @@
 								<div class="col s6">
 									<div class="text-info-index-row"><h3>'.$this->getCabecera().'</h3>
 									<p class="promo-text-info-index-row">'.$this->getDescripcion().'</p>
-									<button class="btn waves-effect waves-light" type="submit" name="action">Contratar actividad
-									<i class="material-icons right">send</i>
-									</button>
-				        
+									<button class="btn waves-effect waves-light promcode" type="submit" name="action"> Precio ' . $this->getPrecio() . ' €
 									</div>
 									<div style="clear:both;"></div>
 								</div>
@@ -41,8 +40,8 @@
 							<span class="card-title activator grey-text text-darken-4">'.$this->getCabecera().'<i class="material-icons right dots-card">more_vert</i></span>
 						</div>
 						<div class="card-action">
-							<a style="color: #26a69a; font-size: 1.3em">10€</a>
-							<a href="#" class="right" style="font-size:1.2em;">Contratar actividad</a>
+							<a style="color: #26a69a; font-size: 1.3em">' . $this->getPrecio() .'€</a>
+							<a href="#" class="right" style="font-size:1.2em;">Mayores de 18</a>
 						</div>
 						<div class="card-reveal">
 							<span class="card-title grey-text text-darken-4">'.$this->getCabecera().'<i class="material-icons right">close</i></span>
@@ -57,9 +56,7 @@
 							<div class="col s6">
 								<div class="text-info-index-row"><h3>'.$this->getCabecera().'</h3>
 									<p class="promo-text-info-index-row ">'.$this->getDescripcion().'</p>
-									<button class="btn waves-effect waves-light" type="submit" name="action">Contratar actividad
-									<i class="material-icons right">send</i>
-									</button>
+									<button class="btn waves-effect waves-light promcode" type="submit" name="action"> Precio ' . $this->getPrecio() . ' €
 								</div>
 								<div style="clear:both;"></div>
 							</div>
@@ -78,8 +75,8 @@
 						<span class="card-title activator grey-text text-darken-4">'.$this->getCabecera().'<i class="material-icons right dots-card">more_vert</i></span>
 					</div>
 					<div class="card-action">
-						<a style="color: #26a69a; font-size: 1.3em">10€</a>
-						<a href="#" class="right" style="font-size:1.2em;">Contratar actividad</a>
+						<a style="color: #26a69a; font-size: 1.3em">' . $this->getPrecio() . '€</a>
+						<a href="#" class="right" style="font-size:1.2em;">Mayores de 18</a>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">'.$this->getCabecera().'<i class="material-icons right">close</i></span>
@@ -91,17 +88,18 @@
 	  function getImagen(){return $this->imagen;}
 	  function getCabecera(){return $this->cabecera;}
 	  function getDescripcion(){return $this->descripcion;}
-
+	  function getPrecio(){return $this->precio;}
 	  function setImagen($img){$imagen = $img;}
 	  function setCabecera($header){$cabecera = $header;}
 	  function setDescripcion($desc){$descripcion = $desc;}
+  	  function setPrecio($pre){$precio = $pre;}
 
 	  function listaActividades(){
-			$sentencia ="SELECT nombre,precio,descripcion_esp,imagen from `actividad`";
+			$sentencia ="SELECT nombre,precio,descripcion_esp,imagen,precio from `actividad`";
 			$totalActiv=0;
 
 			foreach($this->mbd->query($sentencia) as $row){
-				$activ = new Actividad($row['imagen'],$row['nombre'],$row['descripcion_esp']);
+				$activ = new Actividad($row['imagen'],$row['nombre'],$row['descripcion_esp'],$row['precio']);
 				if($totalActiv%2==0){
 					$activ->printActividadesLeft();
 				}else{

@@ -121,6 +121,10 @@
           <input id="codigoprom" type="text" class="validate">
           <label for="codigoprom">Codigo promocional</label>
         </div>
+        <div class="input-field col s12">
+          <input id="codprom2" type="text" class="validate">
+          <label for="codprom2">Codigo promocional</label>
+        </div>
 	</div>
 	<!-- fin segunda columna -->
 

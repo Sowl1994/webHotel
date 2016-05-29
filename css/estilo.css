@@ -32,7 +32,7 @@ display:inline-block;
 .facility{
       border-bottom: 1px solid #eee;
       padding-bottom: 3px;
-
+      font-weight: 300;
 }
 
 .filtro-slider{
@@ -518,4 +518,7 @@ color:#FFF;
 
 #googleMap{
   padding-left: 40px;
+}
+.promcode{
+  font-size: 1.4em;
 }

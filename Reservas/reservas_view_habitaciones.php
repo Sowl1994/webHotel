@@ -68,7 +68,19 @@
       <div class="input-field col s12">
             <input id="codigoprom" type="text" class="validate">
             <label for="codigoprom">Codigo promocional</label>
-          </div>
+      </div>
+      <div class="input-field col s12">
+            <h4 class="big-text-cart" >Contratación Actividades</h4>
+            <input type="checkbox" id="flamenco" />
+            <label for="flamenco">Espectaculo Flamenco - 10€ </label>
+            <br>
+            <input type="checkbox" id="alhambra" />
+            <label for="alhambra">Vista a la Alhambra - 15€</label>
+            <br>
+            <input type="checkbox" id="SierraNevada" />
+            <label for="SierraNevada">Visita a Sierra Nevada - 40€</label>
+            <br><br>
+      </div>
     </div>
     <!-- fin segunda columna -->
 
