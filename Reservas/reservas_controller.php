@@ -3,10 +3,10 @@
 	
 	if(isset( $_POST['fechaInicio']) && isset($_POST['fechaFin'])){
 		//Dias en formato DateTime
-		$diaI = explode(" ", $_POST['fechaInicio']);
-		$fechaIn = $diaI[2]."-05-".$diaI[0]." 16:00:00";
-		$diaS = explode(" ", $_POST['fechaFin']);
-		$fechaS = $diaS[2]."-05-".$diaS[0]." 12:00:00";
+		$originalDate = $_POST['fechaInicio'];
+		$fechaIn = date("Y-m-d H:i:s", strtotime($originalDate));
+		$originalDateo = $_POST['fechaFin'];
+		$fechaS = date("Y-m-d H:i:s", strtotime($originalDateo));
 		
 		$_SESSION['fechaIni']=$fechaIn;
 		$_SESSION['fechaF']=$fechaS;
