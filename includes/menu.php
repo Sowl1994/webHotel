@@ -1,3 +1,13 @@
+  <?php 
+  function getHabitaciones(){
+      $habitaciones = "SELECT id,nombre from habitacion";
+      $mbd=Conexion::conexionBD();
+      foreach($mbd->query($habitaciones) as $row){
+          echo "<li><a href='index.php?secc=habs&tipo=".$row['id']."'>"./*ucfirst(strtolower(*/$row['nombre']/*))*/."</a></li>";
+      }
+      
+  }?>
+
   <!-- NAV -->
   <body>
     <nav class="white" role="navigation">
@@ -25,9 +35,11 @@
          <li><a href="index.php?secc=actividades">Actividades</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="habsDesplegable">Habitaciones</a></li>
               <ul id="habsDesplegable" class="dropdown-content">
-                <li><a href="index.php?secc=habs&tipo=1">Habitacion Doble</a></li>
+
+                <!--<li><a href="index.php?secc=habs&tipo=1">Habitacion Doble</a></li>
                 <li><a href="index.php?secc=habs&tipo=2">Habitacion Triple</a></li>
-                <li><a href="index.php?secc=habs&tipo=3">Habitacion Doble Superior</a></li>
+                <li><a href="index.php?secc=habs&tipo=3">Habitacion Doble Superior</a></li>-->
+                <?php getHabitaciones();?>
               </ul>
 
         <li><a href="index.php?secc=fotos">Fotos</a></li>

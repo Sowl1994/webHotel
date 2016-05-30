@@ -6,8 +6,8 @@
 			<div class=' col s12 l8 offset-l2  proces-row center row-icon-procg'>
 				<a href="#" class='row-icon-proc '><i class='fa fa-check-circle-o icon-proceso'></i><div class='labe-proceso'>Fechas</div></a>
 				<a href="#" class='row-icon-proc'><i class="fa fa-bed icon-proceso" aria-hidden="true"></i></i><div class='labe-proceso'>Habitaciones</div></a>
-				<a href="#" class='row-icon-proc select-proc'><i class="fa fa-users icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Datos Cliente</div></a>
-				<a href="#" class='row-icon-proc'><i class="fa fa-credit-card-alt icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Pago</div></a>
+				<a href="#" class='row-icon-proc select-proc'><i class="fa fa-users icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Datos Cliente Y pago</div></a>
+				<!--<a href="#" class='row-icon-proc'><i class="fa fa-credit-card-alt icon-proceso" aria-hidden="true"></i><div class='labe-proceso'>Pago</div></a>-->
 			</div>
 		</div><!-- fin progreso indicadores -->
 		<form action="index.php?secc=mireserva2&r" id='informacion-usuario' method="post">
@@ -18,20 +18,20 @@
 							<div class="input-field col s12 l6">
 							<?php
 							if(isset($_SESSION['nombre']))
-								echo '<input id="Nombre" name="nombre" type="text" value="'.$_SESSION['nombre'].'" class="validate">';
+								echo '<input id="Nombre" name="nombre" type="text" value="'.$_SESSION['nombre'].'" class="validate" required>';
 								else{
 							?>
-								<input id="Nombre" name="nombre" type="text" class="validate">
+								<input id="Nombre" name="nombre" type="text" class="validate" required>
 							<?php }?>
 								<label for="Nombre">Nombre</label>
 							</div>
 							<div class="input-field col s12 l6">
 								<?php 
 								if(isset($_SESSION['apellidos']))
-									echo '<input id="apellidos" name="apellidos" type="text" value="'.$_SESSION['apellidos'].'" class="validate">';
+									echo '<input id="apellidos" name="apellidos" type="text" value="'.$_SESSION['apellidos'].'" class="validate" required>';
 									else{
 								?>
-									<input id="apellidos" name="apellidos" type="text" class="validate">
+									<input id="apellidos" name="apellidos" type="text" class="validate" required>
 								<?php }?>
 								<label for="apellidos">Apellidos</label>
 							</div>
@@ -40,20 +40,20 @@
 							<div class="input-field col s12 l6">
 								<?php 
 								if(isset($_SESSION['dni']))
-									echo '<input id="dni" name="dni" type="text" value="'.$_SESSION['dni'].'" class="validate">';
+									echo '<input id="dni" name="dni" type="text" value="'.$_SESSION['dni'].'" class="validate" required>';
 									else{
 								?>
-									<input id="dni" name="dni" type="text" class="validate">
+									<input id="dni" name="dni" type="text" class="validate" required>
 								<?php }?>
 								<label for="dni">DNI</label>
 							</div>
 							<div class="input-field col s12 l6">
 							<?php 
 								if(isset($_SESSION['email']))
-									echo '<input id="email" name="email" type="email" value="'.$_SESSION['email'].'" class="validate">';
+									echo '<input id="email" name="email" type="email" value="'.$_SESSION['email'].'" class="validate" required>';
 									else{
 								?>
-									<input id="email" name="email" type="email" class="validate">
+									<input id="email" name="email" type="email" class="validate" required>
 								<?php }?>
 								<label for="email">Email</label>
 							</div>
@@ -106,11 +106,11 @@
 						<div class="row">
 						<h4 class='big-texth4-cart'> Información Pago</h4>
 						<p>
-							<input class="with-gap" name="group3" value="1" type="radio" id="t"/>
+							<input class="with-gap" name="group3" value="1" type="radio" id="t" required/>
 							<label for="t">Voy a pagar con tarjeta</label>
 						</p>
 							<div class="input-field col s12 l3">
-								<input id="Nombre" type="text" class="validate">
+								<input id="Nombre" type="text" name="nTarjeta" class="validate">
 								<label for="Nombre">Numero de Tarjeta</label>
 							</div>
 							<div class="input-field col s6 l2">

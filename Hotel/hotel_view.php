@@ -164,5 +164,8 @@
   if(isset($_GET['fechaErroneaEMS'])){
     alerterror("Las fechas son erroneas");
   }
+   if(isset($_GET['noreg'])){
+    alerterror("Se necesita logueo para reservar");
+  }
 ?>
 <!-- fin contenido principal -->

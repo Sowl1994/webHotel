@@ -3,8 +3,9 @@ ob_start();
 	session_start();
 	require_once("./includes/head.php"); 
 	include("./includes/popups.php");
-	require_once("./includes/menu.php");
 	require_once("./conexion/conexion.php");
+	require_once("./includes/menu.php");
+	
 
 	if(!isset($_GET['secc'])){
 		require_once("./Hotel/hotel_controller.php");

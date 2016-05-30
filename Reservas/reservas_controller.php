@@ -1,8 +1,6 @@
 <?php
+	if(!isset($_SESSION['session_id'])) header("Location:index.php?noreg");
 	require_once("./Reservas/reservas_model.php");
-	
-
-
 
 	if(isset( $_POST['fechaInicio']) && isset($_POST['fechaFin'])){
 		//Dias en formato DateTime
@@ -37,6 +35,7 @@
 			require_once("./Reservas/reservas_view_datos.php");
 		else{
 			$reserva->reservar($_SESSION['pedido']);
+			//require_once("./facturas/facturas/facturasF.php");
 			require_once("./Reservas/mandaMail.php");
 			header("Location:index.php?reserva=true");
 		}

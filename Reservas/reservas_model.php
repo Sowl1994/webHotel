@@ -49,13 +49,13 @@
 		    $porcentajeLibres = ($totalH-$habitacionesOcupadas)/$totalH;
 		    $add = 1;
 
-		    if($porcentajeLibres <= 0.85){
-		    	$add +=0.1;
-		    }else if($porcentajeLibres <= 0.5){
-		    	$add +=0.3;
-		    }else if($porcentajeLibres <= 0.2){
+		    if($porcentajeLibres <= 0.2){
 		    	$add +=0.5;
-		    }
+		    }else if($porcentajeLibres > 0.2 && $porcentajeLibres <= 0.5){
+		    	$add +=0.3;
+		    }else if($porcentajeLibres > 0.5 && $porcentajeLibres <= 0.85){
+		    	$add +=0.1;
+		    } 
 			return intval($row['precio_base']*$add);
 		}
 
@@ -132,13 +132,21 @@
 			if(isset($_SESSION['session_id'])){
 			 	try{
 					if (isset($_SESSION['session_id'])) {
-
-						
-						$sentencia = $this->mbd->prepare("INSERT INTO `reserva` (`cod_usuario`, `cod_habitacion`, `dia_entrada`, `dia_salida`, `n_adultos`, `n_ninios`, `observaciones`, `precio_final`)
-						VALUES (:cod_user, :cod_hab, :fI, :fS, :nAd, :nNi, :obs, :precio)");
+						$sentencia = $this->mbd->prepare("INSERT INTO `reserva` (`cod_usuario`, `cod_habitacion`, `dia_entrada`, `dia_salida`, `n_adultos`, `n_ninios`, `observaciones`, `precio_final`, `metodo_pago`, `numero_tarjeta`)
+						VALUES (:cod_user, :cod_hab, :fI, :fS, :nAd, :nNi, :obs, :precio, :metodo, :nTarjeta)");
 
 						$total=json_decode($pedido);
 						for ($i=0; $i < count($total); $i++) { 
+							if ($_POST['group3'] == 1) {
+								$pago = "tarjeta";
+								$numero = $_POST['nTarjeta'];
+								if(empty($_POST['nTarjeta'])){
+									header("Location: index.php?secc=mireserva2&noNumeroT");
+								}
+							}else{
+								$pago="metalico";
+								$numero = 0;
+							}
 							$habi = $total[$i];
 							$nN = 0;
 							$p = $this->getPrecio($total[$i]);/*$this->reserva->totalAPagar($costeHabitaciones,$actividades)*/;
@@ -150,6 +158,9 @@
 							$sentencia->bindParam(':nNi', $nN);
 							$sentencia->bindParam(':obs', $_POST['observaciones']);
 							$sentencia->bindParam(':precio',  $p);
+							$sentencia->bindParam(':metodo', $pago);
+							$sentencia->bindParam(':nTarjeta',  $numero);
+
 
 							// insertar una fila
 							$sentencia->execute();

@@ -1,3 +1,23 @@
+ <?php 
+  function getHabitacionesLateral(){
+      $habitaciones = "SELECT id,nombre from habitacion";
+      $mbd=Conexion::conexionBD();
+      foreach($mbd->query($habitaciones) as $row){
+          echo "<li><a href='index.php?secc=habs&tipo=".$row['id']."'>"./*ucfirst(strtolower(*/$row['nombre']/*))*/."</a></li>";
+      }
+      
+  }
+
+  function getHabitacionLateral($id){
+      $habitaciones = "SELECT id,nombre from habitacion WHERE id != $id";
+      $mbd=Conexion::conexionBD();
+      foreach($mbd->query($habitaciones) as $row){
+          echo "<li><a href='index.php?secc=habs&tipo=".$row['id']."'>"./*ucfirst(strtolower(*/$row['nombre']/*))*/."</a></li>";
+      }
+      
+  }
+
+  ?>
  <div class="menu-lateral">
   <div class="header">
     <div class="hd"><h3>Categorias</h3></div>
@@ -16,17 +36,19 @@
 		}
 		echo "<li><a href='index.php?secc=habs'>Habitaciones</a></li><ul class='padd'>";
 		if(isset($_GET['tipo'])){
-			if($_GET['tipo'] != 1){
+			getHabitacionLateral($_GET['tipo']);
+			/*if($_GET['tipo'] != 1){
 				echo "<li><a href='index.php?secc=habs&tipo=1'>Habitacion Doble</a></li>";
 			}if($_GET['tipo'] != 2){
 				echo "<li><a href='index.php?secc=habs&tipo=2'>Habitacion Triple</a></li>";
 			}if($_GET['tipo'] != 3){
 				echo "<li><a href='index.php?secc=habs&tipo=3'>Habitacion Doble Superior</a></li>";
-			}
+			}*/
 		}else{
-			echo "<li><a href='index.php?secc=habs&tipo=1'>Habitacion Doble</a></li>";
+			getHabitacionesLateral();
+			/*echo "<li><a href='index.php?secc=habs&tipo=1'>Habitacion Doble</a></li>";
 			echo "<li><a href='index.php?secc=habs&tipo=2'>Habitacion Triple</a></li>";
-			echo "<li><a href='index.php?secc=habs&tipo=3'>Habitacion Doble Superior</a></li>";
+			echo "<li><a href='index.php?secc=habs&tipo=3'>Habitacion Doble Superior</a></li>";*/
 		}
 		
 		
@@ -37,17 +59,17 @@
 				echo " <li><a href='index.php?secc=fotos'>Fotos</a></li>";
 			}if($_GET['secc'] != "contacto"){
 				echo "<li><a href='index.php?secc=contacto'>Contacto y mapa</a></li>";
-			}if($_GET['secc'] != "opiniones"){
+			}/*if($_GET['secc'] != "opiniones"){
 				echo "<li><a href='index.php?secc=opiniones'>Opiniones</a></li>";
 			}if($_GET['secc'] != "mireserva"){
 				echo "<li><a href='index.php?secc=mireserva'>Mi reserva</a></li>";
-			}		
+			}*/		
 		}else{
 			echo "<li><a href='index.php?secc=servicios'>Servicios</a></li>";
 			echo "<li><a href='index.php?secc=fotos'>Fotos</a></li>";
 			echo "<li><a href='index.php?secc=contacto'>Contacto y mapa</a></li>";
-			echo "<li><a href='index.php?secc=opiniones'>Opiniones</a></li>";
-			echo "<li><a href='index.php?secc=mireserva'>Mi reserva</a></li>";		
+			/*echo "<li><a href='index.php?secc=opiniones'>Opiniones</a></li>";
+			echo "<li><a href='index.php?secc=mireserva'>Mi reserva</a></li>";	*/	
 		}
 	?>
   </ul>
