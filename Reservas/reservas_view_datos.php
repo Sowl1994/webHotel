@@ -160,7 +160,7 @@
 					            <p class='date-cart'><?php 
 								  setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
 					              $fecha = strftime("%A, %d de %B de %Y", strtotime($fechaIn));
-					              echo $fecha;
+					              echo utf8_decode($fecha);
 					             ?><br></p>
 					            <p class='small-text-cart'> A partir de las 13:00</p>
 					            <hr class='separador-cart'></hr>
@@ -168,7 +168,7 @@
 					            <p class='date-cart'><?php 
 									setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
 									$fecha = strftime("%A, %d de %B de %Y", strtotime($fechaS));
-									echo $fecha;
+									echo utf8_decode($fecha);
 					            ?><br></p>
 					            <p class='small-text-cart'>Hasta las 12:00 </p><br>
 					            <hr class='separador-cart'></hr>
@@ -187,17 +187,22 @@
 										echo "<p class='date-cart mm'> Actividades: <br></p>";
 
 										$actividades = array();
+										$x = 0;
 										for ($i=0; $i < 4; $i++) { 
 											$act = "act".$i;
 											if(isset($_POST[$act]) && $_POST[$act] == "on"){
 												array_push($actividades, $i);
 												$reserva->listaActividad($i);
+												$_SESSION['pedidoactpdf'][$x] = $reserva->devolverNombreActividad($i);
+												$_SESSION['pedidoactpdf'][$x+1] = $reserva->devolverPrecioActividad($i);
+												$x = $x+2;
 											}
 										}
 
 										echo "<p class='date-cart mm'> Habitaciones: <br></p>";
 										$reserva->listaPedido($_POST['totalHabs']);
 										$_SESSION['pedido']=$_POST['totalHabs'];
+										$_SESSION['pedidopdf'] = $reserva->devolverhabitaciones($_POST['totalHabs']);
 										if($reserva->checkPromo($_POST['codProm'])>0)
 											$costeHabitaciones=$reserva->calculaTotalConPromo($dias,$_POST['totalHabs'],$desc);
 										else

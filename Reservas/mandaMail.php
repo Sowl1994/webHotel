@@ -1,5 +1,6 @@
 <?php
 	require_once "./lib/PHPMailer/PHPMailerAutoload.php";
+	//include("./facturas/facturas/facturasHotel.php");
 	//Se pueden enviar los headers en cualquier lugar del documento ->ERROR en los header
 	ob_start();
 	$username = "usuariosucio@gmail.com";
@@ -25,14 +26,18 @@
 	$mail->Subject = "Resguardo de la reserva";
 
 	//Mensaje de envio
-	$msg = "Estimado/a ".$_SESSION['nombre']." ".$_SESSION['apellidos'].":\n Aqui tiene un resguardo de la reserva realizada, esperamos que tenga un buen dia\n\nTotal : ".$_SESSION['total']."€, podra ver un desglose en la factura adjunta\n";
+	$msg = "Estimado/a ".$_POST['nombre']." ".$_POST['apellidos'].":\n Aqui tiene un resguardo de la reserva realizada, esperamos que tenga un buen dia\n\nTotal : ".$_SESSION['total']."€, podra ver un desglose en la factura adjunta\n";
 	$msg = nl2br($msg);
 	$mail->msgHTML($msg);
 
 	//Direccion del receptor
-	$address = $_SESSION['email'];
+	$address = $_POST['email'];
+	$archivo = "facturas/doc.pdf";
+
+	$mail->AddAttachment($archivo,$archivo);
 	$mail->AddAddress($address,"Mr/Mrs ".$_SESSION['nombre']." ".$_SESSION['apellidos']);
 	$mail->AddAddress($username,$header);
+
 
 	if(!$mail->Send()) {
 		echo "Error al enviar: ".$mail->ErrorInfo;

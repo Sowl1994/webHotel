@@ -36,7 +36,7 @@
 			$f1 = new DateTime($fechaIni);
 			$f2 = new DateTime($fechaSal);
 			$dias = $f2->diff($f1)->format("%a");
-			return $dias+1;
+			return $dias;
 		}
 
 		public function calculaPorDisponible($id){
@@ -127,6 +127,24 @@
 				
 			}
 		}
+		public function devolverhabitaciones($Habs){
+			$totalpedido[0] = "";
+			$x = 0;
+			$totalHabs = json_decode($Habs);
+			for ($i=0; $i < count($totalHabs); $i++) { 
+				$cantidad = array_count_values($totalHabs);
+				$sentencia = "SELECT id,nombre,precio_base from habitacion WHERE id = ".$totalHabs[$i];
+				foreach($this->mbd->query($sentencia) as $row){
+					$totalpedido[$x] = $row['nombre'];
+					$x++;
+					$totalpedido[$x] = $this->calculaPorDisponible($row['id']);
+					$x++;
+				}
+				
+			}
+
+			return $totalpedido;
+		}
 
 		public function reservar($pedido){
 			if(isset($_SESSION['session_id'])){
@@ -209,12 +227,27 @@
 
 		public function listaActividades(){
 			$sentencia = "SELECT * from actividad";
-
 			foreach($this->mbd->query($sentencia) as $row){
 				echo "<input type='checkbox' id='act".$row['id']."' name='act".$row['id']."'/>
 			            <label for='act".$row['id']."'>".$row['nombre']." - ".$row['precio']."€ </label>
 			          <br>";
       		}
+		}
+
+		public function devolverPrecioActividad($id){
+			$sentencia = "SELECT * from actividad WHERE id=$id";
+			foreach($this->mbd->query($sentencia) as $row){
+					$totalpedido = $row['precio'];
+      		}
+      		return $totalpedido;
+		}
+
+		public function devolverNombreActividad($id){
+			$sentencia = "SELECT * from actividad WHERE id=$id";
+			foreach($this->mbd->query($sentencia) as $row){
+					$totalpedido = $row['nombre'];
+      		}
+      		return $totalpedido;
 		}
 
 		public function listaActividad($id){

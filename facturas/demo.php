@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="utf8" />
     <title>DEMO FACTURAS PDF</title>
     <style>
         body {
@@ -17,9 +17,9 @@
 <body>
 <center>
 <h3>DEMO DE GENERAR FACTURAS EN FORMATO PDF CON PHP</h3>
-<h4>El script creará la factura para que la guardes en tu PC personal, el script elimina automáticamente la factura, de modo que sólo pueda tener acceso a la misma el administrador.</h4>
+<h4>El script crearÃ¡ la factura para que la guardes en tu PC personal, el script elimina automÃ¡ticamente la factura, de modo que sÃ³lo pueda tener acceso a la misma el administrador.</h4>
 
-<form method="post" action="facturas/facturas.php">
+<form method="post" action="facturas/facturasHotel.php">
     <button type="submit">GENERAR FACTURA PDF</button>
     
     <h3>Los datos de la factura demo son los siguientes ...</h3>
@@ -30,7 +30,7 @@
     <td><input type="text" name="id_factura" value="1" size="5"></td>
  </tr>
  <tr>
-    <td>fecha emisión de factura:</td>
+    <td>fecha emisiÃ³n de factura:</td>
     <td><input type="text" name="fecha_factura" value="<?php echo date("d-m-Y"); ?>" size="15"></td>
  </tr>
  <tr>
@@ -38,11 +38,11 @@
     <td><input type="text" name="nombre_tienda" value="Nombre de la tienda S.L" size="50"></td>
  </tr>
  <tr>
-    <td>Dirección de la tienda:</td>
-    <td><input type="text" name="direccion_tienda" value="C/ demostración nº 1" size="50"></td>
+    <td>DirecciÃ³n de la tienda:</td>
+    <td><input type="text" name="direccion_tienda" value="C/ demostraciÃ³n nÂº 1" size="50"></td>
  </tr>
  <tr>
-    <td>Población de la tienda:</td>
+    <td>PoblaciÃ³n de la tienda:</td>
     <td><input type="text" name="poblacion_tienda" value="Madrid" size="25"></td>
  </tr>
  <tr>
@@ -50,11 +50,11 @@
     <td><input type="text" name="provincia_tienda" value="Madrid" size="25"></td>
  </tr>
  <tr>
-    <td>Código Postal de la tienda:</td>
+    <td>CÃ³digo Postal de la tienda:</td>
     <td><input type="text" name="codigo_postal_tienda" value="28080" size="5"></td>
  </tr>
  <tr>
-    <td>Teléfono de la tienda:</td>
+    <td>TelÃ©fono de la tienda:</td>
     <td><input type="text" name="telefono_tienda" value="900 00 00 00" size="15"></td>
  </tr>
  <tr>
@@ -75,14 +75,14 @@
  </tr>
  <tr>
     <td>Apellidos del cliente:</td>
-    <td><input type="text" name="apellidos_cliente" value="García García" size="15"></td>
+    <td><input type="text" name="apellidos_cliente" value="GarcÃ­a GarcÃ­a" size="15"></td>
  </tr>
  <tr>
-    <td>Dirección del cliente:</td>
-    <td><input type="text" name="direccion_cliente" value="C/ cualquiera nº 1" size="50"></td>
+    <td>DirecciÃ³n del cliente:</td>
+    <td><input type="text" name="direccion_cliente" value="C/ cualquiera nÂº 1" size="50"></td>
  </tr>
  <tr>
-    <td>Población del cliente:</td>
+    <td>PoblaciÃ³n del cliente:</td>
     <td><input type="text" name="poblacion_cliente" value="Sevilla" size="25"></td>
  </tr>
  <tr>
@@ -90,7 +90,7 @@
     <td><input type="text" name="provincia_cliente" value="Sevilla" size="25"></td>
  </tr>
  <tr>
-    <td>Código Postal del cliente:</td>
+    <td>CÃ³digo Postal del cliente:</td>
     <td><input type="text" name="codigo_postal_cliente" value="41070" size="5"></td>
  </tr>
  <tr>
@@ -107,17 +107,17 @@
     <td><input type="text" name="iva" value="21" size="5"> %</td>
  </tr>
  <tr>
-    <td>Gastos de envío</td>
-    <td><input type="text" name="gastos_de_envio" value="5.95" size="5"> €</td>
+    <td>Gastos de envÃ­o</td>
+    <td><input type="text" name="gastos_de_envio" value="5.95" size="5"> â‚¬</td>
  </tr>
 </table>
 
-<p><mark>¡Ver código fuente para ver simulación de extracción de los datos de productos de una base de datos!</mark></p>
+<p><mark>Â¡Ver cÃ³digo fuente para ver simulaciÃ³n de extracciÃ³n de los datos de productos de una base de datos!</mark></p>
 
 <table cellpadding="5" border="1">
     <tr><th>Unidades</th><th>Productos</th><th>Precio unidad</th></tr>
 <?php
-//Demo de Array de productos simulando extracción de datos de una base de datos.
+//Demo de Array de productos simulando extracciÃ³n de datos de una base de datos.
 $array_productos = array
 (
 "unidades" => array(1, 4, 3), 
@@ -132,17 +132,17 @@ echo
 <tr>
 <td>".$array_productos["unidades"][$x]."</td>
 <td>".$array_productos["productos"][$x]."</td>
-<td>".$array_productos["precio_unidad"][$x]." €</td>
+<td>".$array_productos["precio_unidad"][$x]." â‚¬</td>
 </tr>
 ";
 $x++;
 }
-// A continuación se guardan en variables los datos de los productos, separados por comas
-// que luego serán extraídos a través de la función explode a la hora de generar la factura
+// A continuaciÃ³n se guardan en variables los datos de los productos, separados por comas
+// que luego serÃ¡n extraÃ­dos a travÃ©s de la funciÃ³n explode a la hora de generar la factura
 $unidades = implode(",", $array_productos["unidades"]);
 $productos = implode(",", $array_productos["productos"]);
 $precio_unidad = implode(",", $array_productos["precio_unidad"]);
-// A continuación se guardarán los datos de los productos a través de campos ocultos
+// A continuaciÃ³n se guardarÃ¡n los datos de los productos a travÃ©s de campos ocultos
 ?>
 </table>
 
