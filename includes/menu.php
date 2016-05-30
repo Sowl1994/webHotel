@@ -15,7 +15,13 @@
         <!-- LOGIN -->
          <ul class="right hide-on-med-and-down">
          <?php if(isset($_SESSION['session_username'])){?>
-         <li><a  class="dropdown-button" href="#!" data-activates="loginDesplegable"><i class="material-icons right">perm_identity</i>Bienvenido, <?php echo $_SESSION['session_username'];?></a></li>
+         <li><a  class="dropdown-button" href="#!" data-activates="loginDesplegable">
+         <?php if($_SESSION['isAdmin'] == 1){?>
+         <i class="material-icons right">account_circle</i>
+          <?php }else{?>
+         <i class="material-icons right">perm_identity</i>
+         <?php }?>
+         Bienvenido, <?php echo $_SESSION['session_username'];?></a></li>
           <ul id="loginDesplegable" class="dropdown-content">
               <li><a class="center" href="./Usuarios/usuario_controller.php?lo">Logout</a></li>
           </ul>

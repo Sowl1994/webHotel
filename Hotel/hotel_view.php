@@ -60,7 +60,13 @@
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4><?php echo $nombre ?></h4>
-          <p style=' text-align: justify;' class="left-align light"><?php echo $descripcion ?></p>
+          <p style='text-align: justify;' class="left-align light" id="descr" onmouseout="document.getElementById('editIconT').style.display=`none`;" onmouseover="document.getElementById('editIconT').style.display=`inline`;"><?php echo $descripcion; 
+
+            if ($_SESSION['isAdmin'] == '1') {
+                echo '<a class="modal-trigger" href="#modal1" id="aEditTitle" style="text-decoration:none;font-size:11px;"><i id=editIconT style="display:none" class="material-icons">build</i></a>';
+            }
+
+          ?></p>
         </div>
       </div>
 
@@ -74,6 +80,7 @@
          <div class='showHabs' > <a href="index.php?secc=habs&tipo=1" ><img id='imagenH' src="./images/habitacion_twin2.jpg"></a></div>
          <div class='showHabs' >  <a href="index.php?secc=habs&tipo=2"><img id='imagenH' src="./images/habitacion_twin.jpg"></a></div>
          <div class='showHabs' >  <a href="index.php?secc=habs&tipo=3"><img  id='imagenH' src="./images/habitacion_suite.jpg"></a></div>
+         <?php //$hotel->getHabitaciones();?>
         </div>
     </div>
 
@@ -157,6 +164,23 @@
     </div>
 </div>
 
+<div id="modal1" class="modal">
+  <form action="index.php?cambiaD" method="POST">
+    <div class="modal-content">
+      <h4>Cambiar Descripcion</h4>
+       <div class="row">
+       <div class="input-field col s12">
+       <?php echo ' <input id="datosD" class="materialize-textarea" value="'.$descripcion.'" type="text" name="cambiaD" class="validate" rows="4" cols ="50">';?>
+          <label for="datosD"></label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Cambiar</button>
+    </div>
+  </form>
+</div>
+
 <?php 
   if(isset($_GET['datosErroneos'])){
     alertwarning("Datos incorrectos.");
@@ -166,6 +190,10 @@
   }
    if(isset($_GET['noreg'])){
     alerterror("Se necesita logueo para reservar");
+  }
+
+  if(isset($_GET['reserva']) && $_GET['reserva'] == true){
+    alertsucess("Se ha reservado correctamente.");
   }
 ?>
 <!-- fin contenido principal -->
