@@ -62,7 +62,7 @@
           <h4><?php echo $nombre ?></h4>
           <p style='text-align: justify;' class="left-align light" id="descr" onmouseout="document.getElementById('editIconT').style.display=`none`;" onmouseover="document.getElementById('editIconT').style.display=`inline`;"><?php echo $descripcion; 
 
-            if ($_SESSION['isAdmin'] == '1') {
+            if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == '1') {
                 echo '<a class="modal-trigger" href="#modal1" id="aEditTitle" style="text-decoration:none;font-size:11px;"><i id=editIconT style="display:none" class="material-icons">build</i></a>';
             }
 
