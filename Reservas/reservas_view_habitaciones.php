@@ -117,12 +117,15 @@
           var eliminar = document.createElement("a");
           eliminar.href="#";
           eliminar.id="e"+id;
-          eliminar.innerHTML = "<i class='material-icons'>remove_shopping_cart</i>";
+          eliminar.style.color = "red";
+          eliminar.innerHTML = "<i class='material-icons'>clear</i>";
+          eliminar.onclick = function() { eliminaProducto(id,precio,pedido) };
 
           var divSubcont = document.createElement("div");
           divSubcont.className="row";
           divSubcont.style.marginBottom = "0px";
           divSubcont.style.paddingTop = "5px";
+          divSubcont.id="d"+id;
           var divCont = document.getElementById("big-res-carrito-second");
 
           parrafoPrecio.appendChild(eliminar);
@@ -150,8 +153,18 @@
 
     }
 
-    function eliminaProducto(){
-      alert();
+    function eliminaProducto(id,precio,pedido){
+       var nH = (document.getElementById("t"+id).innerHTML).split("x");
+       var nHi = parseInt(nH[1]);
+       for (var i = 0; i < pedido.length; i++) {
+         if(pedido[i] == id){
+           pedido[i] = 0;
+         }
+       }
+       document.getElementById("d"+id).remove();
+       var precioTotal = parseInt(document.getElementById("total").innerHTML);
+       document.getElementById("total").innerHTML = (precioTotal-(precio*nHi))+"€/noche";
+       $('#ped').val(JSON.stringify(pedido.sort()));
     }
   </script>
 </form>
