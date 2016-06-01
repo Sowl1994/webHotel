@@ -114,6 +114,10 @@
           precioHabitacion.style.marginRight = "-10px";
           var parrafoPrecio = document.createElement("p");
           parrafoPrecio.innerHTML=precio+" €";
+          var eliminar = document.createElement("a");
+          eliminar.href="#";
+          eliminar.id="e"+id;
+          eliminar.innerHTML = "<i class='material-icons'>remove_shopping_cart</i>";
 
           var divSubcont = document.createElement("div");
           divSubcont.className="row";
@@ -121,9 +125,11 @@
           divSubcont.style.paddingTop = "5px";
           var divCont = document.getElementById("big-res-carrito-second");
 
+          parrafoPrecio.appendChild(eliminar);
           nombreHabitacion.appendChild(parrafoNombre);
           totalHabitacion.appendChild(parrafoTotal);
           precioHabitacion.appendChild(parrafoPrecio);
+          
 
           divSubcont.appendChild(nombreHabitacion);
           divSubcont.appendChild(totalHabitacion);
@@ -142,6 +148,10 @@
         pedido.push(id);
         $('#ped').val(JSON.stringify(pedido.sort()));
 
+    }
+
+    function eliminaProducto(){
+      alert();
     }
   </script>
 </form>
