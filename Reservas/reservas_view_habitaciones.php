@@ -96,6 +96,7 @@
 
         var nPersonas = parseInt(document.getElementById("totalPersonas").innerHTML);
         precio = parseInt(precio)*1;
+        var dispo = document.getElementById("disp"+id);
 
         if(pedido.indexOf(id) == -1){
           var nombreHabitacion = document.createElement("div");
@@ -140,27 +141,39 @@
           divCont.appendChild(divSubcont);          
         }else{
           var nH = (document.getElementById("t"+id).innerHTML).split("x");
-          var nHi = parseInt(nH[1])+ 1;
-          document.getElementById("t"+id).innerHTML = "x "+nHi;
+          var nDispo = parseInt(dispo.innerHTML);
+          if(nDispo > 0){
+            var nHi = parseInt(nH[1])+ 1;
+            document.getElementById("t"+id).innerHTML = "x "+nHi;
+          }
         }
 
-        
         var precioTotal = parseInt(document.getElementById("total").innerHTML);
-        document.getElementById("total").innerHTML = (precioTotal+precio)+"€/noche";
-
-        pedido.push(id);
-        $('#ped').val(JSON.stringify(pedido.sort()));
+        
+        var nDispo = parseInt(dispo.innerHTML)-1;
+        if(nDispo >= 0){
+          document.getElementById("total").innerHTML = (precioTotal+precio)+"€/noche";
+          dispo.innerHTML = parseInt(nDispo);
+          pedido.push(id);
+          $('#ped').val(JSON.stringify(pedido.sort()));
+        }else{
+          alert("No hay habitaciones disponibles");
+        }
+        
 
     }
 
     function eliminaProducto(id,precio,pedido){
        var nH = (document.getElementById("t"+id).innerHTML).split("x");
        var nHi = parseInt(nH[1]);
+       var dispo = document.getElementById("disp"+id);
        for (var i = 0; i < pedido.length; i++) {
          if(pedido[i] == id){
            pedido[i] = 0;
          }
        }
+       var nDispo = parseInt(dispo.innerHTML)+nHi;
+       dispo.innerHTML = parseInt(nDispo);
        document.getElementById("d"+id).remove();
        var precioTotal = parseInt(document.getElementById("total").innerHTML);
        document.getElementById("total").innerHTML = (precioTotal-(precio*nHi))+"€/noche";

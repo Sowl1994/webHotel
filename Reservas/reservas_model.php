@@ -211,7 +211,7 @@
 	              </div>
 	              <div class='card-proc-action'>
 	                <a style='color: #26a69a; font-size: 1.4em; margin-left:10px;'>".$row['pax']." <i class='fa fa-users' aria-hidden='true'></i></a>
-	                <a style='color: green; font-size: 1.4em; margin-left:10px;'>".$disponibles."/".$row['total_habitaciones']." <i class='fa fa-check' aria-hidden='true'></i></a>
+	                <a style='color: green; font-size: 1.4em; margin-left:10px;'><span id='disp".$row['id']."'>".$disponibles."</span>/".$row['total_habitaciones']." <i class='fa fa-check' aria-hidden='true'></i></a>
 	                <a style='color: green; font-size: 1.4em; margin-left:10px;'>".$precio."€</a>
 	                <a href='#' id=hab".$row['id']." class='right card-proc-add' style='font-size:1.1em;' onclick='aniadeHabitacion(".$row['id'].",".$precio.",`".$row['nombre']."`)'>Añadir</a>
 	              </div>
