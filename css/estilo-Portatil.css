@@ -41,6 +41,20 @@
   margin-left: 120px;
 }
 
+  .date-cart{
+    font-size: 1em;
+  }
 
+  .card{
+    zoom:85%;
+  }
+
+  #carta-selechab{
+    height: 600px;
+  }
+
+  #next-habs{
+    margin-top: 140px;
+  }
 
 } 

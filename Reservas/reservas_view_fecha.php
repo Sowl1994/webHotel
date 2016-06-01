@@ -50,7 +50,7 @@
 			</div>
 		</div><!-- fin calendario -->
     <div class='row'><!-- botones continuar -->
-      <div class="input-field col s12 l12  right-align " id="next-habs">
+      <div class="input-field col s12 l12  right-align ">
         <div class='col s12 l3  bt-movil right'>
                   <button class="btn col s12 waves-effect waves-light green right" type="submit" name="action">Siguiente 
                     <i class="material-icons right">trending_flat</i>

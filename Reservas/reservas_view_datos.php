@@ -222,16 +222,16 @@
 			</div><!-- fin datos adicionales -->
 		
 		<div class='row'><!-- botones continuar -->
-			<div class="input-field col s12 l12  right-align " id="next-habs">
+			<div class="input-field col s12 l12  right-align ">
 				<div class='col s12 l3  bt-movil right'>
 	                <button class="btn col s12 waves-effect waves-light green right" type="submit" name="action">Siguiente 
 	                  <i class="material-icons right">trending_flat</i>
 	                </button>
 				</div>
-				<div class='col s12 l2  bt-movil'>
+				<div class='col s12 l3  bt-movil'>
 						<a href="index.php" class="btn col s12 waves-effect waves-light red left">Cancelar</a>
 				</div>
-				<div class='col s12 l3 offset-l4 bt-derecha  bt-movil'>
+				<div class='col s12 l3 offset-l3 bt-derecha  bt-movil'>
 						<a href="index.php?secc=mireserva" class="btn col s12 waves-effect waves-light blue-grey">Anterior<i class="material-icons left rotado">trending_flat</i></a>
 
 				</div>
