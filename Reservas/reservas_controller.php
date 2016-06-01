@@ -9,8 +9,12 @@
 		$fechaIn = date("Y-m-d H:i:s", strtotime($originalDate));
 		$originalDateo = $_POST['fechaFin'];
 		$fechaS = date("Y-m-d H:i:s", strtotime($originalDateo));
+
+		$hoy = new DateTime();
+		$f1 = new DateTime($fechaIn);
+		$f2 = new DateTime($fechaS);
 		
-		if($fechaIn >= $fechaS){
+		if($fechaIn >= $fechaS|| $f1 < $hoy || $f2 < $hoy){
 			header("Location:./index.php?fechaErroneaEMS");
 		}
 
