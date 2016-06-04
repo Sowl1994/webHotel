@@ -51,6 +51,18 @@
         <li><a href="index.php?secc=fotos">Fotos</a></li>
         <li><a href="index.php?secc=contacto">Contacto y mapa</a></li>
        <!-- <li><a href="index.php?secc=opiniones">Opiniones</a></li>-->
+        <!-- prueba gestion de reservas-->
+          <li>
+            <form method='GET'>
+            <div class='input_container'>
+                  <input type="text" id="country_id" name='keyword' autocomplete="off" onkeyup="autocomplet()">
+                  <ul id="country_list_id"></ul>
+            </div>
+            </form>
+          </li>
+        <!-- fin gestion de reservas -->
+
+
         </ul>
         <!-- NAV MOBIL-->
           <ul id="nav-mobile" class="side-nav">

@@ -36,5 +36,9 @@
   <!-- alerts-->
    <link rel="stylesheet" href="css/alerts.css">
   <!-- FIN alerts-->
+
+    <!-- buscador-->
+    <script type="text/javascript" src="js/script.js"></script>
+  <!-- FIN buscador-->
 </head>
 <!-- FIN HEAD-->

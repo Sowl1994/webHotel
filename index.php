@@ -6,8 +6,11 @@ ob_start();
 	require_once("./conexion/conexion.php");
 	require_once("./includes/menu.php");
 	
-
-	if(!isset($_GET['secc'])){
+	if(isset($_GET['keyword']) && $_GET['keyword'] != ""){
+		echo "<div id='main-container'>";
+			require_once("./panelAdmin/panel_controller.php");
+		echo "</div>";
+	}else if(!isset($_GET['secc'])){
 		require_once("./Hotel/hotel_controller.php");
 	}else{ 
 		

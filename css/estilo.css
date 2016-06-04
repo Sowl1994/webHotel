@@ -522,3 +522,117 @@ color:#FFF;
 .promcode{
   font-size: 1.4em;
 }
+
+
+
+/* buscador*/
+.input_container {
+  height: 30px;
+  float: left;
+}
+.input_container input {
+  height: 20px;
+  padding: 3px;
+  border-radius: 0;
+}
+.input_container ul {
+  border: 1px solid #eaeaea;
+  position: absolute;
+  z-index: 111111111111111;
+  background: #f3f3f3;
+  list-style: none;
+  display: inline;
+}
+
+.input_container ul li {
+  padding: 2px;
+  display: inline;
+}
+.input_container ul li:hover {
+  background: #eaeaea;
+}
+#country_list_id {
+  display: none;
+  background-color: white;
+  color: #666;
+  z-index: 111111;
+  position: absolute;
+    border-bottom: 1px solid #f3f3f3;
+    margin-top: -5px;
+}
+
+#country_id{
+  color: #666;
+  height: 30px; 
+
+}
+/* fin buscador*/
+
+
+/* cartas reserva */
+.reserva-card{
+
+    margin: 20px;
+    width: 280px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+
+.reserva-card .close {
+    font-weight: 4010;
+    text-align: right;
+    margin: 0 10px 0 0;
+    color: #888;
+}
+
+.reserva-card .content .title h2 {
+    margin: 12px 0 20px 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    color: #3a4142;
+}
+
+.reserva-card .content .detail {
+    border-bottom: 1px solid #ddd;
+    background: #4da6cf;
+    width: 94%;
+    padding: 10px 0 0 0;
+    min-height: 60px;
+    margin: 0 auto;
+}
+
+.reserva-card .content .detail .item {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.item .title {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 300;
+}
+.item .value {
+    color: #fff;
+    font-size: 18px;
+    margin: 4px 0 0 0;
+}
+
+
+.reserva-card .content .btn-reserva {
+    min-height: 35px;
+    width: 94%;
+    margin: 0 auto 8px auto;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0 0 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.reserva-card .content .btn-continue {
+    background: #4da6cf;
+    margin-top: 8px;
+}
+/* fin cartas reserva */

@@ -40,7 +40,7 @@
           <h2 class ='big-text-cart'> Entrada </h2>
             <p class='date-cart'><?php 
               setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
-              $fecha = strftime("%A, %d de %B de %Y", strtotime($fechaIn));
+              $fecha = utf8_encode(strftime("%A, %d de %B de %Y", strtotime($fechaIn)));
               echo $fecha . "(Estancia de ".$dias." dias)";
              ?><br></p>
             <p class='small-text-cart'> A partir de las 13:00</p>
@@ -48,7 +48,7 @@
           <h2 class ='big-text-cart'> Salida </h2>
             <p class='date-cart'><?php 
               setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
-              $fecha = strftime("%A, %d de %B de %Y", strtotime($fechaS));
+              $fecha = utf8_encode(strftime("%A, %d de %B de %Y", strtotime($fechaS)));
               echo $fecha;
             ?><br></p>
             <p class='small-text-cart'>Hasta las 12:00 </p><br>
