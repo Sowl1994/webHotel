@@ -163,6 +163,16 @@
 
     }
 
+    function modificaPrecioActividad(id,precio){
+    	var precioTotal = parseInt(document.getElementById("total").innerHTML);
+
+    	if(document.getElementById('act'+id).checked) {
+		    document.getElementById("total").innerHTML = (precioTotal+parseInt(precio))+"€/noche";
+		} else {
+		   document.getElementById("total").innerHTML = (precioTotal-parseInt(precio))+"€/noche";
+		}
+    }
+
     function eliminaProducto(id,precio,pedido){
        var nH = (document.getElementById("t"+id).innerHTML).split("x");
        var nHi = parseInt(nH[1]);

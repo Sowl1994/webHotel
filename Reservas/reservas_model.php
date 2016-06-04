@@ -193,8 +193,9 @@
 		}
 
 		public function listaHabitaciones($fechaI,$fechaS){
-			$sentencia = "SELECT * from habitacion";
+			$sentencia = "SELECT * from habitacion WHERE pax >= ".$_SESSION['nPersonas'];
 
+			$nHab = 0;
 			foreach($this->mbd->query($sentencia) as $row){
 				$restantes = $this->habitacionesReservadas($row['id'],$fechaI,$fechaS);
 				$disponibles = $row['total_habitaciones']-$restantes;
@@ -221,6 +222,11 @@
 	              </div>
 	            </div>
 	          </div>";
+	          $nHab++;
+      		}
+
+      		if($nHab == 0){
+      			echo "No hay habitaciones disponibles para ese numero de personas. Intentelo con un numero menor.<br> Disculpe las molestias";
       		}
 
 		}
@@ -228,7 +234,7 @@
 		public function listaActividades(){
 			$sentencia = "SELECT * from actividad";
 			foreach($this->mbd->query($sentencia) as $row){
-				echo "<input type='checkbox' id='act".$row['id']."' name='act".$row['id']."'/>
+				echo "<input type='checkbox' id='act".$row['id']."' name='act".$row['id']."' onclick='modificaPrecioActividad(`".$row['id']."`,`".$row['precio']."`)'/>
 			            <label for='act".$row['id']."'>".$row['nombre']." - ".$row['precio']."€ </label>
 			          <br>";
       		}
