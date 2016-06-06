@@ -78,6 +78,7 @@
                 <li><a class="modal-trigger center" href="#modal-registro">Registro</a></li>
               </ul>
           <?php }?>   
+
               <li><a href="index.php">Hotel</a></li>
               <li><a href="index.php?secc=promo">Promociones</a></li>
               <li><a href="index.php?secc=actividades">Actividades</a></li>
@@ -89,7 +90,6 @@
                 </ul>
               <li><a href="index.php?secc=fotos">Fotos</a></li>
               <li><a href="index.php?secc=contacto">Contacto y mapa</a></li>
-
           </ul>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         <!-- FIN NAV MOBIL -->

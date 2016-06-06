@@ -1,7 +1,7 @@
 <div class='container'>
 <div class='row'>
 <?php
-	$reserva->listareservas(1);
+	$reserva->listareservas($_GET['keyword']);
 ?>
 </div>
 </div>
