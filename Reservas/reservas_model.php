@@ -193,8 +193,15 @@
 		}
 
 		public function listaHabitaciones($fechaI,$fechaS){
-			$sentencia = "SELECT * from habitacion WHERE pax >= ".$_SESSION['nPersonas'];
+			if($_SESSION['nPersonas']%2 != 0 && $_SESSION['nPersonas']>=3){
+			  $sentencia = "SELECT * from habitacion";
+			}else if($_SESSION['nPersonas']%2==0){
+			  $sentencia = "SELECT * from habitacion WHERE pax %2 =0";
+			}else{
+			  $sentencia = "SELECT * from habitacion WHERE pax = 1";
+			}
 
+			$arrayH = array('');
 			$nHab = 0;
 			foreach($this->mbd->query($sentencia) as $row){
 				$restantes = $this->habitacionesReservadas($row['id'],$fechaI,$fechaS);
@@ -202,7 +209,7 @@
 				$precio = $this->calculaPorDisponible($row['id']);
 				$foto = explode(";", $row['imagen']);
 
-				echo "<div class='col l4'>
+				$habitacion = "<div class='col l4'>
 	            <div class='card'>
 	              <div class='card-image waves-effect waves-block waves-light'>
 	                <img class='activator' src='".$foto[0]."'>
@@ -222,12 +229,15 @@
 	              </div>
 	            </div>
 	          </div>";
+	          array_push($arrayH, $habitacion);
 	          $nHab++;
       		}
 
       		if($nHab == 0){
-      			echo "No hay habitaciones disponibles para ese numero de personas. Intentelo con un numero menor.<br> Disculpe las molestias";
+      			//echo "No hay habitaciones disponibles para ese numero de personas. Intentelo con un numero menor.<br> Disculpe las molestias";
+      			return 0;
       		}
+      		return $arrayH;
 
 		}
 

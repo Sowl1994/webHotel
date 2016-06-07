@@ -36,9 +36,9 @@
 	if($_GET['secc'] == "p1"){
 		require_once("./Reservas/reservas_view_fecha.php");
 	}else if($_GET['secc'] == "mireserva"){
-		
+		$arrayH = $reserva->listaHabitaciones($fechaIn,$fechaS);
 		$dias = $reserva->getTotalDias($_SESSION['fechaIni'],$_SESSION['fechaF']);
-		/*if($fechaIn<$fechaS)*/ require_once("./Reservas/reservas_view_habitaciones.php");
+		require_once("./Reservas/reservas_view_habitaciones.php");
 	}else if($_GET['secc'] == "mireserva2"){
 		$dias = $reserva->getTotalDias($_SESSION['fechaIni'],$_SESSION['fechaF']);
 		if(!isset($_GET['r']))
