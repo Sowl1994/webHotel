@@ -65,7 +65,10 @@
     <div class="col s12 l3 card" id='big-res-carrito-second'>
     <br>
       <div class='row' style=' margin-bottom: 10px;'>
-        <div class='col l3' style='margin-top:5px;' ><a style="color: #26a69a; font-size: 1.3em; margin-top:10px;"><span id="totalPersonas"><i class="fa fa-users" aria-hidden="true"></i><?php echo '<input id="npersonas" type="number" name="nPersonas" value='.$_SESSION['nPersonas'].' class="c-align" onchange="actualizaHabitaciones(`'.$fechaIn.'`,`'.$fechaS.'`)" onkeyup="actualizaHabitaciones(`'.$fechaIn.'`,`'.$fechaS.'`)" required>'?></span> </a></div>
+        <div class='col l1' style='margin-top:5px;' ><a style="color: #26a69a; font-size: 1.3em; margin-top:10px;"><i class="fa fa-users" aria-hidden="true"></i></a></div>
+        <div class='col l2 s4' style='margin-top: -10px;'>
+          <span id="totalPersonas" ><?php echo '<input id="npersonas" min="1" type="number" name="nPersonas" value='.$_SESSION['nPersonas'].' class="c-align" onchange="actualizaHabitaciones(`'.$fechaIn.'`,`'.$fechaS.'`)" onkeyup="actualizaHabitaciones(`'.$fechaIn.'`,`'.$fechaS.'`)" required>'?></span> 
+        </div>
         <div class='col l2' ><p class='hab-cart'>Total:</p></div>
         <div class='col l5 right' ><p id="total" class='hab-cart'>0€/noche</p></div>  
       </div>

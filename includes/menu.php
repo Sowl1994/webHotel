@@ -52,6 +52,7 @@
         <li><a href="index.php?secc=contacto">Contacto y mapa</a></li>
        <!-- <li><a href="index.php?secc=opiniones">Opiniones</a></li>-->
         <!-- prueba gestion de reservas-->
+         <?php if(isset($_SESSION['isAdmin']) && ($_SESSION['isAdmin'] == 1)){?>
           <li>
             <form method='GET'>
             <div class='input_container'>
@@ -60,6 +61,7 @@
             </div>
             </form>
           </li>
+          <?php };?>
         <!-- fin gestion de reservas -->
 
 
