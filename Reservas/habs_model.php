@@ -24,6 +24,7 @@
 		}
 		
 		public function calculaPorDisponible($id){
+			
 			$pdo = connect();
 			$totalH = $this->getTotalHabs($id);
 			$sentencia =$pdo->prepare("SELECT precio_base FROM `habitacion` WHERE id=".$id."");

@@ -90,6 +90,19 @@
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script>
     var pedido = [];
+    function carrito(id,fI,fF){
+      var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange=function() {
+	    if (xhttp.readyState == 4 && xhttp.status == 200) {
+	      var response = xhttp.responseText;
+	      var datos = response.split(";");
+	      aniadeHabitacion(id,datos[0],datos[1]);
+	    }
+	  };
+	  xhttp.open("GET", "./Reservas/carrito_controller.php?id="+id+"&fI="+fI+"&fF="+fF, true);
+	  xhttp.send();
+    }
+
     function aniadeHabitacion(id,precio,nombre){
 
         var nPersonas = parseInt(document.getElementById("totalPersonas").innerHTML);
@@ -136,7 +149,7 @@
           divSubcont.appendChild(nombreHabitacion);
           divSubcont.appendChild(totalHabitacion);
           divSubcont.appendChild(precioHabitacion);
-          divCont.appendChild(divSubcont);          
+          divCont.appendChild(divSubcont);  
         }else{
           var nH = (document.getElementById("t"+id).innerHTML).split("x");
           var nDispo = parseInt(dispo.innerHTML);
@@ -145,7 +158,7 @@
             document.getElementById("t"+id).innerHTML = "x "+nHi;
           }
         }
-
+        
         var precioTotal = parseInt(document.getElementById("total").innerHTML);
         
         var nDispo = parseInt(dispo.innerHTML)-1;
@@ -193,13 +206,13 @@
     	var xhttp = new XMLHttpRequest();
 
 		  xhttp.onreadystatechange=function() {
-
 		    if (xhttp.readyState == 4 && xhttp.status == 200) {
 		      document.getElementById("divHabitaciones").innerHTML = xhttp.responseText;
 		    }
 		  };
 		  xhttp.open("GET", "./Reservas/habs_refresh.php?nP="+nP+"&fI="+fI+"&fF="+fF, true);
 		  xhttp.send();
+		  document.getElementById("total").innerHTML = "0€/noche";
     }
   </script>
 </form>
