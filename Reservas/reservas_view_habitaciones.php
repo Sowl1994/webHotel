@@ -137,7 +137,7 @@
           eliminar.onclick = function() { eliminaProducto(id,precio,pedido) };
 
           var divSubcont = document.createElement("div");
-          divSubcont.className="row";
+          divSubcont.className="rowT";
           divSubcont.style.marginBottom = "0px";
           divSubcont.style.paddingTop = "5px";
           divSubcont.id="d"+id;
@@ -216,6 +216,32 @@
 		  xhttp.open("GET", "./Reservas/habs_refresh.php?nP="+nP+"&fI="+fI+"&fF="+fF, true);
 		  xhttp.send();
 		  document.getElementById("total").innerHTML = "0€/noche";
+
+      //Total de elementos del carrito
+      var idArray = [];
+      $('.rowT').each(function () {
+          idArray.push(this.id);
+          idArray.sort();
+      });
+
+      var activiActivadas = [];
+      $('input:checkbox:checked').each(function () {
+          activiActivadas.push(this.id);
+          activiActivadas.sort();
+      });
+
+      for (var i = 0; i < activiActivadas.length; i++) {
+          document.getElementById(activiActivadas[i]).checked = false;
+      }
+
+      //Quitamos los elementos del carrito
+      for (var i = 0; i < idArray.length; i++) {
+          document.getElementById(idArray[i]).remove();
+      }
+      //Eliminamos el pedido
+      for (var i = 0; i < pedido.length; i++) {
+        pedido[i] = 0;
+      }
     }
   </script>
 </form>
